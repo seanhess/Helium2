@@ -1,0 +1,337 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		78D8F0C713A0640D003750D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F0C613A0640D003750D2 /* UIKit.framework */; };
+		78D8F0C913A0640D003750D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F0C813A0640D003750D2 /* Foundation.framework */; };
+		78D8F0CB13A0640D003750D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F0CA13A0640D003750D2 /* CoreGraphics.framework */; };
+		78D8F0D113A0640D003750D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78D8F0CF13A0640D003750D2 /* InfoPlist.strings */; };
+		78D8F0D313A0640D003750D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D8F0D213A0640D003750D2 /* main.m */; };
+		78D8F0D713A0640D003750D2 /* HeliumDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D8F0D613A0640D003750D2 /* HeliumDemoAppDelegate.m */; };
+		78E9898613A064BA005A72D4 /* libHelium.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E9898113A064A5005A72D4 /* libHelium.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		78E9898013A064A5005A72D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78E9897813A064A4005A72D4 /* Helium.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78D8F08A13A063E6003750D2;
+			remoteInfo = Helium;
+		};
+		78E9898213A064A5005A72D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78E9897813A064A4005A72D4 /* Helium.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78D8F09713A063E6003750D2;
+			remoteInfo = HeliumTests;
+		};
+		78E9898413A064B5005A72D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78E9897813A064A4005A72D4 /* Helium.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 78D8F08913A063E6003750D2;
+			remoteInfo = Helium;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		78D8F0C213A0640D003750D2 /* HeliumDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeliumDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78D8F0C613A0640D003750D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		78D8F0C813A0640D003750D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		78D8F0CA13A0640D003750D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		78D8F0CE13A0640D003750D2 /* HeliumDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HeliumDemo-Info.plist"; sourceTree = "<group>"; };
+		78D8F0D013A0640D003750D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		78D8F0D213A0640D003750D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		78D8F0D413A0640D003750D2 /* HeliumDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HeliumDemo-Prefix.pch"; sourceTree = "<group>"; };
+		78D8F0D513A0640D003750D2 /* HeliumDemoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeliumDemoAppDelegate.h; sourceTree = "<group>"; };
+		78D8F0D613A0640D003750D2 /* HeliumDemoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeliumDemoAppDelegate.m; sourceTree = "<group>"; };
+		78E9897813A064A4005A72D4 /* Helium.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Helium.xcodeproj; path = ../Helium.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		78D8F0BF13A0640C003750D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78E9898613A064BA005A72D4 /* libHelium.a in Frameworks */,
+				78D8F0C713A0640D003750D2 /* UIKit.framework in Frameworks */,
+				78D8F0C913A0640D003750D2 /* Foundation.framework in Frameworks */,
+				78D8F0CB13A0640D003750D2 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		78D8F0B713A0640C003750D2 = {
+			isa = PBXGroup;
+			children = (
+				78E9897813A064A4005A72D4 /* Helium.xcodeproj */,
+				78D8F0CC13A0640D003750D2 /* HeliumDemo */,
+				78D8F0C513A0640D003750D2 /* Frameworks */,
+				78D8F0C313A0640D003750D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		78D8F0C313A0640D003750D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78D8F0C213A0640D003750D2 /* HeliumDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78D8F0C513A0640D003750D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78D8F0C613A0640D003750D2 /* UIKit.framework */,
+				78D8F0C813A0640D003750D2 /* Foundation.framework */,
+				78D8F0CA13A0640D003750D2 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78D8F0CC13A0640D003750D2 /* HeliumDemo */ = {
+			isa = PBXGroup;
+			children = (
+				78D8F0D513A0640D003750D2 /* HeliumDemoAppDelegate.h */,
+				78D8F0D613A0640D003750D2 /* HeliumDemoAppDelegate.m */,
+				78D8F0CD13A0640D003750D2 /* Supporting Files */,
+			);
+			path = HeliumDemo;
+			sourceTree = "<group>";
+		};
+		78D8F0CD13A0640D003750D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				78D8F0CE13A0640D003750D2 /* HeliumDemo-Info.plist */,
+				78D8F0CF13A0640D003750D2 /* InfoPlist.strings */,
+				78D8F0D213A0640D003750D2 /* main.m */,
+				78D8F0D413A0640D003750D2 /* HeliumDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		78E9897913A064A4005A72D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78E9898113A064A5005A72D4 /* libHelium.a */,
+				78E9898313A064A5005A72D4 /* HeliumTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		78D8F0C113A0640C003750D2 /* HeliumDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78D8F0DA13A0640D003750D2 /* Build configuration list for PBXNativeTarget "HeliumDemo" */;
+			buildPhases = (
+				78D8F0BE13A0640C003750D2 /* Sources */,
+				78D8F0BF13A0640C003750D2 /* Frameworks */,
+				78D8F0C013A0640C003750D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78E9898513A064B5005A72D4 /* PBXTargetDependency */,
+			);
+			name = HeliumDemo;
+			productName = HeliumDemo;
+			productReference = 78D8F0C213A0640D003750D2 /* HeliumDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		78D8F0B913A0640C003750D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = I.TV;
+			};
+			buildConfigurationList = 78D8F0BC13A0640C003750D2 /* Build configuration list for PBXProject "HeliumDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 78D8F0B713A0640C003750D2;
+			productRefGroup = 78D8F0C313A0640D003750D2 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 78E9897913A064A4005A72D4 /* Products */;
+					ProjectRef = 78E9897813A064A4005A72D4 /* Helium.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				78D8F0C113A0640C003750D2 /* HeliumDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		78E9898113A064A5005A72D4 /* libHelium.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libHelium.a;
+			remoteRef = 78E9898013A064A5005A72D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		78E9898313A064A5005A72D4 /* HeliumTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = HeliumTests.octest;
+			remoteRef = 78E9898213A064A5005A72D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		78D8F0C013A0640C003750D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78D8F0D113A0640D003750D2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		78D8F0BE13A0640C003750D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78D8F0D313A0640D003750D2 /* main.m in Sources */,
+				78D8F0D713A0640D003750D2 /* HeliumDemoAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		78E9898513A064B5005A72D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Helium;
+			targetProxy = 78E9898413A064B5005A72D4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		78D8F0CF13A0640D003750D2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78D8F0D013A0640D003750D2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		78D8F0D813A0640D003750D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Helium/";
+			};
+			name = Debug;
+		};
+		78D8F0D913A0640D003750D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Helium/";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		78D8F0DB13A0640D003750D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HeliumDemo/HeliumDemo-Prefix.pch";
+				INFOPLIST_FILE = "HeliumDemo/HeliumDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		78D8F0DC13A0640D003750D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HeliumDemo/HeliumDemo-Prefix.pch";
+				INFOPLIST_FILE = "HeliumDemo/HeliumDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		78D8F0BC13A0640C003750D2 /* Build configuration list for PBXProject "HeliumDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78D8F0D813A0640D003750D2 /* Debug */,
+				78D8F0D913A0640D003750D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78D8F0DA13A0640D003750D2 /* Build configuration list for PBXNativeTarget "HeliumDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78D8F0DB13A0640D003750D2 /* Debug */,
+				78D8F0DC13A0640D003750D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 78D8F0B913A0640C003750D2 /* Project object */;
+}

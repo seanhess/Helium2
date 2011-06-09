@@ -16,6 +16,8 @@
 		78D8F0A713A063E6003750D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78D8F0A513A063E6003750D2 /* InfoPlist.strings */; };
 		78D8F0A913A063E6003750D2 /* HeliumTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 78D8F0A813A063E6003750D2 /* HeliumTests.h */; };
 		78D8F0AB13A063E6003750D2 /* HeliumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D8F0AA13A063E6003750D2 /* HeliumTests.m */; };
+		78E9898A13A064FF005A72D4 /* Woot.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E9898813A064FF005A72D4 /* Woot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78E9898B13A064FF005A72D4 /* Woot.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E9898913A064FF005A72D4 /* Woot.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,15 +33,17 @@
 /* Begin PBXFileReference section */
 		78D8F08A13A063E6003750D2 /* libHelium.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHelium.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D8F08D13A063E6003750D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		78D8F09113A063E6003750D2 /* Helium-Prefix.pch */ = {isa = PBXFileReference; path = "Helium-Prefix.pch"; sourceTree = "<group>"; };
+		78D8F09113A063E6003750D2 /* Helium-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Helium-Prefix.pch"; sourceTree = "<group>"; };
 		78D8F09713A063E6003750D2 /* HeliumTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeliumTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D8F09813A063E6003750D2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		78D8F09A13A063E6003750D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		78D8F09D13A063E6003750D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		78D8F0A413A063E6003750D2 /* HeliumTests-Info.plist */ = {isa = PBXFileReference; path = "HeliumTests-Info.plist"; sourceTree = "<group>"; };
+		78D8F0A413A063E6003750D2 /* HeliumTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HeliumTests-Info.plist"; sourceTree = "<group>"; };
 		78D8F0A613A063E6003750D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		78D8F0A813A063E6003750D2 /* HeliumTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeliumTests.h; sourceTree = "<group>"; };
 		78D8F0AA13A063E6003750D2 /* HeliumTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeliumTests.m; sourceTree = "<group>"; };
+		78E9898813A064FF005A72D4 /* Woot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Woot.h; sourceTree = "<group>"; };
+		78E9898913A064FF005A72D4 /* Woot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Woot.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				78D8F09013A063E6003750D2 /* Supporting Files */,
+				78E9898813A064FF005A72D4 /* Woot.h */,
+				78E9898913A064FF005A72D4 /* Woot.m */,
 			);
 			path = Helium;
 			sourceTree = "<group>";
@@ -138,6 +144,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E9898A13A064FF005A72D4 /* Woot.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E9898B13A064FF005A72D4 /* Woot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +330,7 @@
 				GCC_PREFIX_HEADER = "Helium/Helium-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = helium;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -334,6 +343,7 @@
 				GCC_PREFIX_HEADER = "Helium/Helium-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = helium;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -387,6 +397,7 @@
 				78D8F0B013A063E6003750D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		78D8F0B113A063E6003750D2 /* Build configuration list for PBXNativeTarget "HeliumTests" */ = {
 			isa = XCConfigurationList;
@@ -395,6 +406,7 @@
 				78D8F0B313A063E6003750D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

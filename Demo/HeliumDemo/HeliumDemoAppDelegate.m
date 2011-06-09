@@ -7,7 +7,7 @@
 //
 
 #import "HeliumDemoAppDelegate.h"
-#import "Woot.h"
+#import "HEViewController.h"
 
 @implementation HeliumDemoAppDelegate
 
@@ -15,6 +15,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    HEViewController * rootViewController = [[HEViewController new] autorelease];
+    [rootViewController loadPageFromFile:@"containers"];
+    
+    
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window makeKeyAndVisible];

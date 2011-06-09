@@ -18,6 +18,17 @@
 		78D8F0AB13A063E6003750D2 /* HeliumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D8F0AA13A063E6003750D2 /* HeliumTests.m */; };
 		78E9898A13A064FF005A72D4 /* Woot.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E9898813A064FF005A72D4 /* Woot.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78E9898B13A064FF005A72D4 /* Woot.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E9898913A064FF005A72D4 /* Woot.m */; };
+		78E989B113A06847005A72D4 /* HEContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E989AF13A06847005A72D4 /* HEContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78E989B213A06847005A72D4 /* HEContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E989B013A06847005A72D4 /* HEContainer.m */; };
+		78E989BF13A06A19005A72D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E989BE13A06A19005A72D4 /* UIKit.framework */; };
+		78E989C313A06A61005A72D4 /* HEViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E989C113A06A61005A72D4 /* HEViewController.h */; };
+		78E989C413A06A61005A72D4 /* HEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E989C213A06A61005A72D4 /* HEViewController.m */; };
+		78E989CB13A06CDE005A72D4 /* NSDataAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E989C713A06CDE005A72D4 /* NSDataAdditions.h */; };
+		78E989CC13A06CDE005A72D4 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E989C813A06CDE005A72D4 /* NSDataAdditions.m */; };
+		78E989CD13A06CDE005A72D4 /* TBXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E989C913A06CDE005A72D4 /* TBXML.h */; };
+		78E989CE13A06CDE005A72D4 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E989CA13A06CDE005A72D4 /* TBXML.m */; };
+		78E989D113A139A8005A72D4 /* HEParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E989CF13A139A8005A72D4 /* HEParser.h */; };
+		78E989D213A139A8005A72D4 /* HEParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E989D013A139A8005A72D4 /* HEParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +55,17 @@
 		78D8F0AA13A063E6003750D2 /* HeliumTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeliumTests.m; sourceTree = "<group>"; };
 		78E9898813A064FF005A72D4 /* Woot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Woot.h; sourceTree = "<group>"; };
 		78E9898913A064FF005A72D4 /* Woot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Woot.m; sourceTree = "<group>"; };
+		78E989AF13A06847005A72D4 /* HEContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEContainer.h; sourceTree = "<group>"; };
+		78E989B013A06847005A72D4 /* HEContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEContainer.m; sourceTree = "<group>"; };
+		78E989BE13A06A19005A72D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		78E989C113A06A61005A72D4 /* HEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEViewController.h; sourceTree = "<group>"; };
+		78E989C213A06A61005A72D4 /* HEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEViewController.m; sourceTree = "<group>"; };
+		78E989C713A06CDE005A72D4 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
+		78E989C813A06CDE005A72D4 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
+		78E989C913A06CDE005A72D4 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
+		78E989CA13A06CDE005A72D4 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
+		78E989CF13A139A8005A72D4 /* HEParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEParser.h; sourceTree = "<group>"; };
+		78E989D013A139A8005A72D4 /* HEParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E989BF13A06A19005A72D4 /* UIKit.framework in Frameworks */,
 				78D8F08E13A063E6003750D2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,8 +96,10 @@
 		78D8F07F13A063E6003750D2 = {
 			isa = PBXGroup;
 			children = (
+				78E989BE13A06A19005A72D4 /* UIKit.framework */,
 				78D8F08F13A063E6003750D2 /* Helium */,
 				78D8F0A213A063E6003750D2 /* HeliumTests */,
+				78E989C513A06CDE005A72D4 /* Vendor */,
 				78D8F08C13A063E6003750D2 /* Frameworks */,
 				78D8F08B13A063E6003750D2 /* Products */,
 			);
@@ -106,6 +131,12 @@
 				78D8F09013A063E6003750D2 /* Supporting Files */,
 				78E9898813A064FF005A72D4 /* Woot.h */,
 				78E9898913A064FF005A72D4 /* Woot.m */,
+				78E989C113A06A61005A72D4 /* HEViewController.h */,
+				78E989C213A06A61005A72D4 /* HEViewController.m */,
+				78E989AF13A06847005A72D4 /* HEContainer.h */,
+				78E989B013A06847005A72D4 /* HEContainer.m */,
+				78E989CF13A139A8005A72D4 /* HEParser.h */,
+				78E989D013A139A8005A72D4 /* HEParser.m */,
 			);
 			path = Helium;
 			sourceTree = "<group>";
@@ -137,6 +168,25 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		78E989C513A06CDE005A72D4 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				78E989C613A06CDE005A72D4 /* TBXML */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		78E989C613A06CDE005A72D4 /* TBXML */ = {
+			isa = PBXGroup;
+			children = (
+				78E989C713A06CDE005A72D4 /* NSDataAdditions.h */,
+				78E989C813A06CDE005A72D4 /* NSDataAdditions.m */,
+				78E989C913A06CDE005A72D4 /* TBXML.h */,
+				78E989CA13A06CDE005A72D4 /* TBXML.m */,
+			);
+			path = TBXML;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -145,6 +195,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				78E9898A13A064FF005A72D4 /* Woot.h in Headers */,
+				78E989B113A06847005A72D4 /* HEContainer.h in Headers */,
+				78E989C313A06A61005A72D4 /* HEViewController.h in Headers */,
+				78E989CB13A06CDE005A72D4 /* NSDataAdditions.h in Headers */,
+				78E989CD13A06CDE005A72D4 /* TBXML.h in Headers */,
+				78E989D113A139A8005A72D4 /* HEParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +302,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				78E9898B13A064FF005A72D4 /* Woot.m in Sources */,
+				78E989B213A06847005A72D4 /* HEContainer.m in Sources */,
+				78E989C413A06A61005A72D4 /* HEViewController.m in Sources */,
+				78E989CC13A06CDE005A72D4 /* NSDataAdditions.m in Sources */,
+				78E989CE13A06CDE005A72D4 /* TBXML.m in Sources */,
+				78E989D213A139A8005A72D4 /* HEParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +345,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_OBJCPP_ARC_ABI = NO;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -300,6 +361,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -309,7 +371,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_OBJCPP_ARC_ABI = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -317,6 +380,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

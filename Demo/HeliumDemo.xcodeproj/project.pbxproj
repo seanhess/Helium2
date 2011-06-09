@@ -14,6 +14,7 @@
 		78D8F0D313A0640D003750D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D8F0D213A0640D003750D2 /* main.m */; };
 		78D8F0D713A0640D003750D2 /* HeliumDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D8F0D613A0640D003750D2 /* HeliumDemoAppDelegate.m */; };
 		78E9898613A064BA005A72D4 /* libHelium.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E9898113A064A5005A72D4 /* libHelium.a */; };
+		78E989AE13A0676E005A72D4 /* containers.hml in Resources */ = {isa = PBXBuildFile; fileRef = 78E989AD13A0676E005A72D4 /* containers.hml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		78D8F0D513A0640D003750D2 /* HeliumDemoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeliumDemoAppDelegate.h; sourceTree = "<group>"; };
 		78D8F0D613A0640D003750D2 /* HeliumDemoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeliumDemoAppDelegate.m; sourceTree = "<group>"; };
 		78E9897813A064A4005A72D4 /* Helium.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Helium.xcodeproj; path = ../Helium.xcodeproj; sourceTree = "<group>"; };
+		78E989AD13A0676E005A72D4 /* containers.hml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = containers.hml; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				78D8F0D513A0640D003750D2 /* HeliumDemoAppDelegate.h */,
 				78D8F0D613A0640D003750D2 /* HeliumDemoAppDelegate.m */,
 				78D8F0CD13A0640D003750D2 /* Supporting Files */,
+				78E989AC13A0676E005A72D4 /* static */,
 			);
 			path = HeliumDemo;
 			sourceTree = "<group>";
@@ -126,6 +129,14 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		78E989AC13A0676E005A72D4 /* static */ = {
+			isa = PBXGroup;
+			children = (
+				78E989AD13A0676E005A72D4 /* containers.hml */,
+			);
+			path = static;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -202,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78D8F0D113A0640D003750D2 /* InfoPlist.strings in Resources */,
+				78E989AE13A0676E005A72D4 /* containers.hml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +256,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_OBJCPP_ARC_ABI = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -260,6 +273,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Helium/";
@@ -271,7 +285,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_OBJCPP_ARC_ABI = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -281,6 +296,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Helium/";

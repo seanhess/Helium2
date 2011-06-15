@@ -22,6 +22,4 @@
 
 @property (nonatomic, retain) NSString * background;
 
-@property (nonatomic, retain) NSMutableArray * children;
-
 @end

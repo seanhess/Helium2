@@ -10,6 +10,10 @@
 #import "HEParser.h"
 #import "UIColor+Hex.h"
 
+@interface HEContainer ()
+@property (nonatomic, retain) NSMutableArray * children;
+@end
+
 @implementation HEContainer
 @synthesize left, right, top, bottom, width, height;
 @synthesize children, background;

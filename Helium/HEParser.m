@@ -11,55 +11,86 @@
 #import "HEContainer.h"
 
 @interface HEParser ()
-+ (void) parseElement:(TBXMLElement*)element object:(id)object;
-+ (void) parseChildren:(TBXMLElement*)element object:(id)object;
-+ (void) parseAttributes:(TBXMLElement*)element object:(id)object;
-+ (void) parseAttribute:(TBXMLAttribute*)attribute object:(id)object;
++ (id<HEObject>) parseElement:(TBXMLElement*)element;
++ (void) parseChildren:(TBXMLElement*)element object:(id<HEObject>)object;
++ (void) parseAttributes:(TBXMLElement*)element object:(id<HEObject>)object;
 @end
 
 
 
 @implementation HEParser
 
-+ (void) parse:(NSData*)data {
-
++ (id<HEViewable>) parse:(NSData*)data {
     TBXML * xml = [TBXML tbxmlWithXMLData:data];
+    return (id<HEViewable>)[self parseElement:xml.rootXMLElement];
+}
+
++ (id<HEObject>) parseElement:(TBXMLElement *)element {
+    NSLog(@"<%@>", [TBXML elementName:element]);
     
-    id object = nil;
-    
-    NSString * className = [NSString stringWithFormat:@"HE%@", [TBXML elementName:xml.rootXMLElement]];
+    id<HEObject> object = nil;
+
+    // TODO: change to support other namespaces
+    NSString * className = [NSString stringWithFormat:@"HE%@", [TBXML elementName:element]];
     Class class = NSClassFromString(className);
     object = [class new];
-
-    [self parseElement:xml.rootXMLElement object:object];
-}
-
-+ (void) parseElement:(TBXMLElement *)element object:(id)object {
-    NSLog(@"<%@>", [TBXML elementName:element]);
+    
+    // attaches to it
     [self parseAttributes:element object:object];
-    [self parseChildren:element object:object];    
+    
+    // attaches to it
+    [self parseChildren:element object:object];
+    
+    // Tell it we are done
+    [object didInitialize];
+    
+    return object;
 }
 
-+ (void) parseChildren:(TBXMLElement *)element object:(id)object {
++ (void) parseChildren:(TBXMLElement *)element object:(id<HEParent>)object {
+    
     TBXMLElement * child = element->firstChild;
 
     while(child) {
-        [self parseElement:child object:object];
+        id<HEObject> childObject = [self parseElement:child];
+        [object addChild:childObject];
         child = child->nextSibling;
     }        
 }
 
-+ (void) parseAttributes:(TBXMLElement *)element object:(id)object { 
++ (void) parseAttributes:(TBXMLElement *)element object:(id<HEObject>)object { 
     TBXMLAttribute * attribute = element->firstAttribute;
     
     while(attribute) {
-        NSLog(@"Attribute %@=%@", [TBXML attributeName:attribute], [TBXML attributeValue:attribute]);
-        attribute = attribute->next;
-    }        
-}
+        NSString * attributeName = [TBXML attributeName:attribute];
+        id attributeValue = [TBXML attributeValue:attribute];
+        
+        // Will throw an error for an undefined property
+        // automatically converts to int for us! hooray!
+        @try {
+            [object setValue:attributeValue forKey:attributeName];
+        }
+        @catch (NSException * e) {
+            NSLog(@"NO PROPERTY %@ on %@", attributeName, object);
+        }
+        
+        // [obj setValuesForKeysWithDictionary:dict];
+        
+        // Class class = [object class];
+        // objc_property_t property = class_getProperty(class, [attributeName cStringUsingEncoding:NSUTF8StringEncoding]);
+        
+        // if (property) {
+        //    const char * name = property_getName(property);
+        //    const char * infoChars = property_getAttributes(property);
+        //    NSLog(@" name=%s info=%s", name, info);
+        // }
 
-+ (void) parseAttribute:(TBXMLAttribute *)attribute object:(id)object {
-    NSLog(@"%@=%@", [TBXML attributeName:attribute], [TBXML attributeValue:attribute]);    
+        // if([object respondsToSelector:setter]) {
+        //    [object performSelector:setter withObject:attributeValue];
+        // }
+        
+        attribute = attribute->next;        
+    }        
 }
 
 @end

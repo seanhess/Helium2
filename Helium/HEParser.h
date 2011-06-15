@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HEViewable.h"
 
 @interface HEParser : NSObject
 
-+ (void) parse:(NSData*)data;
++ (id<HEViewable>) parse:(NSData*)data;
 
 @end

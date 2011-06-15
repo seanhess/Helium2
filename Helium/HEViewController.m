@@ -27,8 +27,19 @@
 - (void) loadPageFromFile:(NSString*)file {
     NSString * path = [[NSBundle mainBundle] pathForResource:file ofType:@"hml"];
     NSData * data = [NSData dataWithContentsOfFile:path];
+    
+    // The background
+    self.view.backgroundColor = [UIColor whiteColor];
 
-    [HEParser parse:data];
+    // I should ADD the view as a sub-view, eh?
+    id<HEViewable> object = [HEParser parse:data];
+    
+    object.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+    [self.view addSubview:object.view];
+    
+//    if ([object isKindOfClass:[HEContainer class]]) {
+//        // hmm, then I need to 
+//    }
     
     return;
 }
@@ -59,8 +70,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
 
 @end

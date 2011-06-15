@@ -7,15 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HEParent.h"
+#import "HEViewable.h"
 
-@interface HEContainer : NSObject
+@interface HEContainer : UIView <HEParent, HEViewable>
 
-@property (nonatomic, assign) NSInteger left;
-@property (nonatomic, assign) NSInteger right;
-@property (nonatomic, assign) NSInteger top;
-@property (nonatomic, assign) NSInteger bottom;
+@property (nonatomic, retain) NSNumber * left;
+@property (nonatomic, retain) NSNumber * right;
+@property (nonatomic, retain) NSNumber * top;
+@property (nonatomic, retain) NSNumber * bottom;
 
-@property (nonatomic, assign) NSInteger width;
-@property (nonatomic, assign) NSInteger height;
+@property (nonatomic, retain) NSNumber * width;
+@property (nonatomic, retain) NSNumber * height;
+
+@property (nonatomic, retain) NSString * background;
+
+@property (nonatomic, retain) NSMutableArray * children;
 
 @end

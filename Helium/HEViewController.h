@@ -10,6 +10,7 @@
 
 @interface HEViewController : UIViewController
 
+// Re-loads the page and displays it
 - (void) loadPageFromFile:(NSString*)file;
 
 @end

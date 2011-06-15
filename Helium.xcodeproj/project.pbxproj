@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		787183F213A8693400F30570 /* NSDataAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 787183EB13A8693400F30570 /* NSDataAdditions.h */; };
+		787183F313A8693400F30570 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 787183EC13A8693400F30570 /* NSDataAdditions.m */; };
+		787183F413A8693400F30570 /* TBXML-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 787183ED13A8693400F30570 /* TBXML-Prefix.pch */; };
+		787183F513A8693400F30570 /* TBXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 787183EE13A8693400F30570 /* TBXML.h */; };
+		787183F613A8693400F30570 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 787183EF13A8693400F30570 /* TBXML.m */; };
+		787183F713A8693400F30570 /* UIColor+Hex.h in Headers */ = {isa = PBXBuildFile; fileRef = 787183F013A8693400F30570 /* UIColor+Hex.h */; };
+		787183F813A8693400F30570 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 787183F113A8693400F30570 /* UIColor+Hex.m */; };
+		7871840913A86D3200F30570 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7871840813A86D3200F30570 /* libz.dylib */; };
 		78D8F08E13A063E6003750D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F08D13A063E6003750D2 /* Foundation.framework */; };
 		78D8F09913A063E6003750D2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F09813A063E6003750D2 /* SenTestingKit.framework */; };
 		78D8F09B13A063E6003750D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F09A13A063E6003750D2 /* UIKit.framework */; };
@@ -16,19 +24,16 @@
 		78D8F0A713A063E6003750D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78D8F0A513A063E6003750D2 /* InfoPlist.strings */; };
 		78D8F0A913A063E6003750D2 /* HeliumTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 78D8F0A813A063E6003750D2 /* HeliumTests.h */; };
 		78D8F0AB13A063E6003750D2 /* HeliumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D8F0AA13A063E6003750D2 /* HeliumTests.m */; };
-		78E9898A13A064FF005A72D4 /* Woot.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E9898813A064FF005A72D4 /* Woot.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78E9898B13A064FF005A72D4 /* Woot.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E9898913A064FF005A72D4 /* Woot.m */; };
 		78E989B113A06847005A72D4 /* HEContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E989AF13A06847005A72D4 /* HEContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78E989B213A06847005A72D4 /* HEContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E989B013A06847005A72D4 /* HEContainer.m */; };
 		78E989BF13A06A19005A72D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E989BE13A06A19005A72D4 /* UIKit.framework */; };
 		78E989C313A06A61005A72D4 /* HEViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E989C113A06A61005A72D4 /* HEViewController.h */; };
 		78E989C413A06A61005A72D4 /* HEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E989C213A06A61005A72D4 /* HEViewController.m */; };
-		78E989CB13A06CDE005A72D4 /* NSDataAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E989C713A06CDE005A72D4 /* NSDataAdditions.h */; };
-		78E989CC13A06CDE005A72D4 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E989C813A06CDE005A72D4 /* NSDataAdditions.m */; };
-		78E989CD13A06CDE005A72D4 /* TBXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E989C913A06CDE005A72D4 /* TBXML.h */; };
-		78E989CE13A06CDE005A72D4 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E989CA13A06CDE005A72D4 /* TBXML.m */; };
 		78E989D113A139A8005A72D4 /* HEParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E989CF13A139A8005A72D4 /* HEParser.h */; };
 		78E989D213A139A8005A72D4 /* HEParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E989D013A139A8005A72D4 /* HEParser.m */; };
+		78E98A1E13A6AE67005A72D4 /* HEParent.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E98A1D13A6AE67005A72D4 /* HEParent.h */; };
+		78E98A2113A6AF1E005A72D4 /* HEObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E98A2013A6AF1E005A72D4 /* HEObject.h */; };
+		78E98A2313A6B3AD005A72D4 /* HEViewable.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E98A2213A6B3AC005A72D4 /* HEViewable.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		787183EB13A8693400F30570 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
+		787183EC13A8693400F30570 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
+		787183ED13A8693400F30570 /* TBXML-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML-Prefix.pch"; sourceTree = "<group>"; };
+		787183EE13A8693400F30570 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
+		787183EF13A8693400F30570 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
+		787183F013A8693400F30570 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		787183F113A8693400F30570 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		7871840813A86D3200F30570 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		78D8F08A13A063E6003750D2 /* libHelium.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHelium.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D8F08D13A063E6003750D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78D8F09113A063E6003750D2 /* Helium-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Helium-Prefix.pch"; sourceTree = "<group>"; };
@@ -53,19 +66,16 @@
 		78D8F0A613A063E6003750D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		78D8F0A813A063E6003750D2 /* HeliumTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeliumTests.h; sourceTree = "<group>"; };
 		78D8F0AA13A063E6003750D2 /* HeliumTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeliumTests.m; sourceTree = "<group>"; };
-		78E9898813A064FF005A72D4 /* Woot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Woot.h; sourceTree = "<group>"; };
-		78E9898913A064FF005A72D4 /* Woot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Woot.m; sourceTree = "<group>"; };
 		78E989AF13A06847005A72D4 /* HEContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEContainer.h; sourceTree = "<group>"; };
 		78E989B013A06847005A72D4 /* HEContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEContainer.m; sourceTree = "<group>"; };
 		78E989BE13A06A19005A72D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		78E989C113A06A61005A72D4 /* HEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEViewController.h; sourceTree = "<group>"; };
 		78E989C213A06A61005A72D4 /* HEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEViewController.m; sourceTree = "<group>"; };
-		78E989C713A06CDE005A72D4 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
-		78E989C813A06CDE005A72D4 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
-		78E989C913A06CDE005A72D4 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
-		78E989CA13A06CDE005A72D4 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
 		78E989CF13A139A8005A72D4 /* HEParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEParser.h; sourceTree = "<group>"; };
 		78E989D013A139A8005A72D4 /* HEParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEParser.m; sourceTree = "<group>"; };
+		78E98A1D13A6AE67005A72D4 /* HEParent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEParent.h; sourceTree = "<group>"; };
+		78E98A2013A6AF1E005A72D4 /* HEObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEObject.h; sourceTree = "<group>"; };
+		78E98A2213A6B3AC005A72D4 /* HEViewable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEViewable.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7871840913A86D3200F30570 /* libz.dylib in Frameworks */,
 				78E989BF13A06A19005A72D4 /* UIKit.framework in Frameworks */,
 				78D8F08E13A063E6003750D2 /* Foundation.framework in Frameworks */,
 			);
@@ -93,13 +104,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		787183E913A8693400F30570 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				787183EA13A8693400F30570 /* TBXML */,
+				787183F013A8693400F30570 /* UIColor+Hex.h */,
+				787183F113A8693400F30570 /* UIColor+Hex.m */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		787183EA13A8693400F30570 /* TBXML */ = {
+			isa = PBXGroup;
+			children = (
+				787183EB13A8693400F30570 /* NSDataAdditions.h */,
+				787183EC13A8693400F30570 /* NSDataAdditions.m */,
+				787183ED13A8693400F30570 /* TBXML-Prefix.pch */,
+				787183EE13A8693400F30570 /* TBXML.h */,
+				787183EF13A8693400F30570 /* TBXML.m */,
+			);
+			path = TBXML;
+			sourceTree = "<group>";
+		};
 		78D8F07F13A063E6003750D2 = {
 			isa = PBXGroup;
 			children = (
 				78E989BE13A06A19005A72D4 /* UIKit.framework */,
 				78D8F08F13A063E6003750D2 /* Helium */,
 				78D8F0A213A063E6003750D2 /* HeliumTests */,
-				78E989C513A06CDE005A72D4 /* Vendor */,
+				787183E913A8693400F30570 /* Vendor */,
 				78D8F08C13A063E6003750D2 /* Frameworks */,
 				78D8F08B13A063E6003750D2 /* Products */,
 			);
@@ -117,6 +150,7 @@
 		78D8F08C13A063E6003750D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7871840813A86D3200F30570 /* libz.dylib */,
 				78D8F08D13A063E6003750D2 /* Foundation.framework */,
 				78D8F09813A063E6003750D2 /* SenTestingKit.framework */,
 				78D8F09A13A063E6003750D2 /* UIKit.framework */,
@@ -129,14 +163,15 @@
 			isa = PBXGroup;
 			children = (
 				78D8F09013A063E6003750D2 /* Supporting Files */,
-				78E9898813A064FF005A72D4 /* Woot.h */,
-				78E9898913A064FF005A72D4 /* Woot.m */,
 				78E989C113A06A61005A72D4 /* HEViewController.h */,
 				78E989C213A06A61005A72D4 /* HEViewController.m */,
 				78E989AF13A06847005A72D4 /* HEContainer.h */,
 				78E989B013A06847005A72D4 /* HEContainer.m */,
 				78E989CF13A139A8005A72D4 /* HEParser.h */,
 				78E989D013A139A8005A72D4 /* HEParser.m */,
+				78E98A2013A6AF1E005A72D4 /* HEObject.h */,
+				78E98A1D13A6AE67005A72D4 /* HEParent.h */,
+				78E98A2213A6B3AC005A72D4 /* HEViewable.h */,
 			);
 			path = Helium;
 			sourceTree = "<group>";
@@ -168,25 +203,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		78E989C513A06CDE005A72D4 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				78E989C613A06CDE005A72D4 /* TBXML */,
-			);
-			path = Vendor;
-			sourceTree = "<group>";
-		};
-		78E989C613A06CDE005A72D4 /* TBXML */ = {
-			isa = PBXGroup;
-			children = (
-				78E989C713A06CDE005A72D4 /* NSDataAdditions.h */,
-				78E989C813A06CDE005A72D4 /* NSDataAdditions.m */,
-				78E989C913A06CDE005A72D4 /* TBXML.h */,
-				78E989CA13A06CDE005A72D4 /* TBXML.m */,
-			);
-			path = TBXML;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -194,12 +210,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78E9898A13A064FF005A72D4 /* Woot.h in Headers */,
 				78E989B113A06847005A72D4 /* HEContainer.h in Headers */,
 				78E989C313A06A61005A72D4 /* HEViewController.h in Headers */,
-				78E989CB13A06CDE005A72D4 /* NSDataAdditions.h in Headers */,
-				78E989CD13A06CDE005A72D4 /* TBXML.h in Headers */,
 				78E989D113A139A8005A72D4 /* HEParser.h in Headers */,
+				78E98A1E13A6AE67005A72D4 /* HEParent.h in Headers */,
+				78E98A2113A6AF1E005A72D4 /* HEObject.h in Headers */,
+				78E98A2313A6B3AD005A72D4 /* HEViewable.h in Headers */,
+				787183F213A8693400F30570 /* NSDataAdditions.h in Headers */,
+				787183F413A8693400F30570 /* TBXML-Prefix.pch in Headers */,
+				787183F513A8693400F30570 /* TBXML.h in Headers */,
+				787183F713A8693400F30570 /* UIColor+Hex.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,12 +321,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78E9898B13A064FF005A72D4 /* Woot.m in Sources */,
 				78E989B213A06847005A72D4 /* HEContainer.m in Sources */,
 				78E989C413A06A61005A72D4 /* HEViewController.m in Sources */,
-				78E989CC13A06CDE005A72D4 /* NSDataAdditions.m in Sources */,
-				78E989CE13A06CDE005A72D4 /* TBXML.m in Sources */,
 				78E989D213A139A8005A72D4 /* HEParser.m in Sources */,
+				787183F313A8693400F30570 /* NSDataAdditions.m in Sources */,
+				787183F613A8693400F30570 /* TBXML.m in Sources */,
+				787183F813A8693400F30570 /* UIColor+Hex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +412,11 @@
 				DSTROOT = /tmp/Helium.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Helium/Helium-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = helium;
 				SKIP_INSTALL = YES;
@@ -405,7 +429,11 @@
 				DSTROOT = /tmp/Helium.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Helium/Helium-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = helium;
 				SKIP_INSTALL = YES;

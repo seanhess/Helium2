@@ -18,9 +18,10 @@
     HEViewController * rootViewController = [[HEViewController new] autorelease];
     [rootViewController loadPageFromFile:@"containers"];
     
-    
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window addSubview:rootViewController.view];
+    self.window.rootViewController = rootViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -16,7 +16,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     HEViewController * rootViewController = [[HEViewController new] autorelease];
-    [rootViewController loadPageFromFile:@"containers"];
+    [rootViewController loadPageFromFile:@"containers.hml"];
     
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

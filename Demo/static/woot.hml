@@ -1,0 +1,4 @@
+
+<Container background="#0000FF">
+    <Image top="50" right="25" source="http://www.gstatic.com/news/img/logo/en_us/news.gif" click="containers.hml"/>
+</Container>

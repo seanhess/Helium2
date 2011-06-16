@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7871840B13A86D4600F30570 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7871840A13A86D4600F30570 /* libz.dylib */; };
+		78BBDCC713A9A05C0038C805 /* woot.hml in Resources */ = {isa = PBXBuildFile; fileRef = 78BBDCC613A9A05C0038C805 /* woot.hml */; };
 		78D8F0C713A0640D003750D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F0C613A0640D003750D2 /* UIKit.framework */; };
 		78D8F0C913A0640D003750D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F0C813A0640D003750D2 /* Foundation.framework */; };
 		78D8F0CB13A0640D003750D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F0CA13A0640D003750D2 /* CoreGraphics.framework */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		7871840A13A86D4600F30570 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		78BBDCC613A9A05C0038C805 /* woot.hml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = woot.hml; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		78D8F0C213A0640D003750D2 /* HeliumDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeliumDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D8F0C613A0640D003750D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		78D8F0C813A0640D003750D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				78E989AD13A0676E005A72D4 /* containers.hml */,
+				78BBDCC613A9A05C0038C805 /* woot.hml */,
 			);
 			path = static;
 			sourceTree = SOURCE_ROOT;
@@ -218,6 +221,7 @@
 			files = (
 				78D8F0D113A0640D003750D2 /* InfoPlist.strings in Resources */,
 				78E989AE13A0676E005A72D4 /* containers.hml in Resources */,
+				78BBDCC713A9A05C0038C805 /* woot.hml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

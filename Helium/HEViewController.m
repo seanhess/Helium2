@@ -12,6 +12,13 @@
 
 @implementation HEViewController
 
+- (id) init {
+    if ((self = [super init])) {
+
+    }
+    return self;
+}
+
 - (void) dealloc {
     [super dealloc];
 }
@@ -25,23 +32,49 @@
 }
 
 - (void) loadPageFromFile:(NSString*)file {
-    NSString * path = [[NSBundle mainBundle] pathForResource:file ofType:@"hml"];
+
+    NSLog(@" ");
+    NSLog(@"LOAD PAGE %@", file);
+
+    NSString * extension = [file pathExtension];
+    NSString * basename = [file stringByDeletingPathExtension];
+    NSString * path = [[NSBundle mainBundle] pathForResource:basename ofType:extension];
     NSData * data = [NSData dataWithContentsOfFile:path];
+    
+    for (UIView * view in self.view.subviews) {
+        [view removeFromSuperview];
+
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:@"click" object:nil];
+    }
+    
     
     // The background
     self.view.backgroundColor = [UIColor whiteColor];
 
     // I should ADD the view as a sub-view, eh?
+    NSLog(@"PARSING");
     id<HEViewable> object = [HEParser parse:data];
+    NSLog(@"PARSED");    
     
     object.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
     [self.view addSubview:object.view];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onClick:) name:@"click" object:nil];    
+        
 //    if ([object isKindOfClass:[HEContainer class]]) {
 //        // hmm, then I need to 
 //    }
     
     return;
+}
+
+- (void) onClick:(NSNotification*)note {
+
+    NSLog(@"ON CLICK %@", [[note userInfo] objectForKey:@"url"]);
+
+    NSString * page = [[note userInfo] objectForKey:@"url"];
+    [self loadPageFromFile:page];
+    
 }
 
 #pragma mark - View lifecycle

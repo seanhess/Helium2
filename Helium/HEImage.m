@@ -11,13 +11,12 @@
 @implementation HEImage
 
 @synthesize left, right, top, bottom, width, height;
-@synthesize source;
+@synthesize source, click;
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        NSLog(@"INIT");
     }
     
     return self;
@@ -33,28 +32,42 @@
     [height release];
     
     [source release];
+    [click release];
     
     [super dealloc];
 }
 
 - (void) didInitialize {
     self.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.source]]];    
-}
 
-- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-
-    NSLog(@"WOOT");
-    
-    return;
-
-    
+    if (self.click) 
+        self.userInteractionEnabled = YES;
 }
 
 - (UIView*)view {
     return self;
 }
 
+- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    // will not get called unless userInteractionEnabled is set
+    // Now what? 
+    
+    // Where should it get intercepted? 
+    
+    // 1 // If there is a navigation controller (on the nearest view controller?)
+    // 2 // Replace the view of the nearest view controller
+    // 3 // A target view? The view that represents the file? 
+    
+    // The nearest view controller's navigation controller?
+    
+    // Global? (receivers can listen for changes, then check if the target view is in their hierarchy
+        // that's not a bad idea, actually, and actually sounds faster. 
+        
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"click" object:self userInfo:[NSDictionary dictionaryWithObject:self.click forKey:@"url"]];
+}
+
 - (void) willMoveToSuperview:(UIView *)newSuperview {
+
 }
 
 - (void) didMoveToSuperview {   

@@ -21,4 +21,6 @@
 
 @property (nonatomic, retain) NSString * source;
 
+@property (nonatomic, retain) NSString * click;
+
 @end

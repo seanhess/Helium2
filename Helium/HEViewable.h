@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HEObject.h"
 
-@protocol HEViewable <NSObject>
+@protocol HEViewable <HEObject>
 - (UIView*)view;
 @end

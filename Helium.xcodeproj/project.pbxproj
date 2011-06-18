@@ -21,6 +21,9 @@
 		78BBDCCB13A9AEF80038C805 /* HELabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BBDCC913A9AEF80038C805 /* HELabel.m */; };
 		78BBDCCE13A9B0970038C805 /* UIView+Layout.h in Headers */ = {isa = PBXBuildFile; fileRef = 78BBDCCC13A9B0970038C805 /* UIView+Layout.h */; };
 		78BBDCCF13A9B0970038C805 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BBDCCD13A9B0970038C805 /* UIView+Layout.m */; };
+		78C11F6A13AD129800546CDF /* TestLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 78C11F6813AD129800546CDF /* TestLayout.h */; };
+		78C11F6C13AD12F100546CDF /* TestLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C11F6913AD129800546CDF /* TestLayout.m */; };
+		78C11F6D13AD151100546CDF /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BBDCCD13A9B0970038C805 /* UIView+Layout.m */; };
 		78D8F08E13A063E6003750D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F08D13A063E6003750D2 /* Foundation.framework */; };
 		78D8F09913A063E6003750D2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F09813A063E6003750D2 /* SenTestingKit.framework */; };
 		78D8F09B13A063E6003750D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F09A13A063E6003750D2 /* UIKit.framework */; };
@@ -67,6 +70,8 @@
 		78BBDCC913A9AEF80038C805 /* HELabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HELabel.m; sourceTree = "<group>"; };
 		78BBDCCC13A9B0970038C805 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		78BBDCCD13A9B0970038C805 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		78C11F6813AD129800546CDF /* TestLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLayout.h; sourceTree = "<group>"; };
+		78C11F6913AD129800546CDF /* TestLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLayout.m; sourceTree = "<group>"; };
 		78D8F08A13A063E6003750D2 /* libHelium.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHelium.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D8F08D13A063E6003750D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78D8F09113A063E6003750D2 /* Helium-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Helium-Prefix.pch"; sourceTree = "<group>"; };
@@ -205,9 +210,11 @@
 		78D8F0A213A063E6003750D2 /* HeliumTests */ = {
 			isa = PBXGroup;
 			children = (
+				78D8F0A313A063E6003750D2 /* Supporting Files */,
 				78D8F0A813A063E6003750D2 /* HeliumTests.h */,
 				78D8F0AA13A063E6003750D2 /* HeliumTests.m */,
-				78D8F0A313A063E6003750D2 /* Supporting Files */,
+				78C11F6813AD129800546CDF /* TestLayout.h */,
+				78C11F6913AD129800546CDF /* TestLayout.m */,
 			);
 			path = HeliumTests;
 			sourceTree = "<group>";
@@ -241,6 +248,7 @@
 				78BBDCC313A990960038C805 /* HEImage.h in Headers */,
 				78BBDCCA13A9AEF80038C805 /* HELabel.h in Headers */,
 				78BBDCCE13A9B0970038C805 /* UIView+Layout.h in Headers */,
+				78C11F6A13AD129800546CDF /* TestLayout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +366,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78C11F6D13AD151100546CDF /* UIView+Layout.m in Sources */,
+				78C11F6C13AD12F100546CDF /* TestLayout.m in Sources */,
 				78D8F0AB13A063E6003750D2 /* HeliumTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

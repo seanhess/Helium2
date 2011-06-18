@@ -65,7 +65,7 @@
     else if (nativeHeight && !shouldStretchHeight)
         h = nativeHeight.intValue;        
 
-    if (shouldStretchHeight) {
+    else {
         h = self.superview.bounds.size.height - top.intValue - bottom.intValue;
         mask = mask | UIViewAutoresizingFlexibleHeight;          
     }

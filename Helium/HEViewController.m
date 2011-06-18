@@ -51,12 +51,10 @@
     // The background
     self.view.backgroundColor = [UIColor whiteColor];
 
-    // I should ADD the view as a sub-view, eh?
-    NSLog(@"PARSING");
     id<HEViewable> object = [HEParser parse:data];
-    NSLog(@"PARSED");    
     
     object.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+    object.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:object.view];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onClick:) name:@"click" object:nil];    

@@ -9,6 +9,7 @@
 #import "HEContainer.h"
 #import "HEParser.h"
 #import "UIColor+Hex.h"
+#import "UIView+Layout.h"
 
 @interface HEContainer ()
 @property (nonatomic, retain) NSMutableArray * children;
@@ -58,74 +59,20 @@
 
 - (void)didMoveToSuperview {
     
-    UIViewAutoresizing mask = UIViewAutoresizingNone;
-    
-    CGFloat x;
-    CGFloat y;
-    CGFloat h;
-    CGFloat w;
-    
-    // -width: calculate width based on left and right
-    // -height: calculate height based on top and bottom
-    
-    // -left: calculate based on width and right
-    // -right: ignore (0)
-    
-    // -top: calculate based on bottom and height
-    // -bottom: ignore (0)
-    
-    if (self.height) {
-        h = self.height.intValue;
+    if (!self.frame.size.width) {
+        [self calculateLayoutWithLeft:self.left top:self.top right:self.right bottom:self.bottom width:self.width height:self.height];
 
-        if (!self.top && self.bottom) {
-            y = self.superview.bounds.size.height - self.bottom.intValue - self.height.intValue;
-            mask = mask | UIViewAutoresizingFlexibleTopMargin;            
-        }
-        else
-            y = self.top.intValue;        
+        // Wait until our frame is set before adding children, so we don't miscalculate their frames. 
+        // Maybe this isn't the best place to do this. Really, I should be observing the superview's frame?
+        // Well, then I wouldn't need autoresizing masks, right? 
+        
     }
-    
-    else {
-        y = self.top.intValue;
-        h = self.superview.bounds.size.height - self.top.intValue - self.bottom.intValue;
-        mask = mask | UIViewAutoresizingFlexibleHeight;        
-    }
-
-    if (self.width) {
-        w = self.width.intValue;
-
-        if (!self.left && self.right) {
-            x = self.superview.bounds.size.width - self.right.intValue - self.width.intValue;
-            mask = mask | UIViewAutoresizingFlexibleLeftMargin;             
-        }
-        else
-            x = self.left.intValue;        
-    }
-    
-    else {
-        x = self.left.intValue;
-        w = self.superview.bounds.size.width - self.left.intValue - self.right.intValue;
-        mask = mask | UIViewAutoresizingFlexibleWidth;
-    }
-
-
-    CGRect calculatedFrame = CGRectMake(x, y, w, h);
-    self.frame = calculatedFrame;
-    self.autoresizingMask = mask;
-    
-
-
-
-
-    // Wait until our frame is set before adding children, so we don't miscalculate their frames. 
-    // Maybe this isn't the best place to do this. Really, I should be observing the superview's frame?
-    // Well, then I wouldn't need autoresizing masks, right? 
     
     for (id<HEObject> child in self.children) {
         if ([child conformsToProtocol:@protocol(HEViewable)]) 
             [self addSubview:[(id<HEViewable>)child view]];
     }
-            
+    
 }
 
 - (void)setBackground:(NSString *)value {    

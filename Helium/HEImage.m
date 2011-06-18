@@ -7,6 +7,7 @@
 //
 
 #import "HEImage.h"
+#import "UIView+Layout.h"
 
 @implementation HEImage
 
@@ -72,29 +73,33 @@
 
 - (void) didMoveToSuperview {   
 
-    UIViewAutoresizing mask = UIViewAutoresizingNone;
-    
-    CGFloat w = self.width.floatValue; 
-    CGFloat h = self.height.floatValue; 
-    CGFloat x = self.left.floatValue;    
-    CGFloat y = self.top.floatValue;
-    
-    if (!w) w = self.image.size.width;
-    if (!h) h = self.image.size.height;
-    
-    if (!self.top && self.bottom) {
-        y = self.superview.bounds.size.height - self.bottom.intValue - h;
-        mask = mask | UIViewAutoresizingFlexibleTopMargin;            
-    }    
-    
-    if (!self.left && self.right) {
-        x = self.superview.bounds.size.width - self.right.intValue - w;
-        mask = mask | UIViewAutoresizingFlexibleLeftMargin;             
-    }
-    
-    
-    self.frame = CGRectMake(x, y, w, h);
-    self.autoresizingMask = mask;    
+    NSNumber * imageWidth = [NSNumber numberWithFloat:self.image.size.width];
+    NSNumber * imageHeight = [NSNumber numberWithFloat:self.image.size.height];
+
+    [self calculateLayoutWithLeft:self.left top:self.top right:self.right bottom:self.bottom width:self.width height:self.height nativeWidth:imageWidth nativeHeight:imageHeight];
+
+//    UIViewAutoresizing mask = UIViewAutoresizingNone;
+//    
+//    CGFloat w = self.width.intValue; 
+//    CGFloat h = self.height.intValue; 
+//    CGFloat x = self.left.intValue;    
+//    CGFloat y = self.top.intValue;
+//    
+//    if (!w) w = self.image.size.width;
+//    if (!h) h = self.image.size.height;
+//    
+//    if (!self.top && self.bottom) {
+//        y = self.superview.bounds.size.height - self.bottom.intValue - h;
+//        mask = mask | UIViewAutoresizingFlexibleTopMargin;            
+//    }    
+//    
+//    if (!self.left && self.right) {
+//        x = self.superview.bounds.size.width - self.right.intValue - w;
+//        mask = mask | UIViewAutoresizingFlexibleLeftMargin;             
+//    }
+//    
+//    self.frame = CGRectMake(x, y, w, h);
+//    self.autoresizingMask = mask;    
 
 }
 

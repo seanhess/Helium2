@@ -17,6 +17,10 @@
 		7871840913A86D3200F30570 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7871840813A86D3200F30570 /* libz.dylib */; };
 		78BBDCC313A990960038C805 /* HEImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 78BBDCC113A990960038C805 /* HEImage.h */; };
 		78BBDCC413A990960038C805 /* HEImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BBDCC213A990960038C805 /* HEImage.m */; };
+		78BBDCCA13A9AEF80038C805 /* HELabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 78BBDCC813A9AEF80038C805 /* HELabel.h */; };
+		78BBDCCB13A9AEF80038C805 /* HELabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BBDCC913A9AEF80038C805 /* HELabel.m */; };
+		78BBDCCE13A9B0970038C805 /* UIView+Layout.h in Headers */ = {isa = PBXBuildFile; fileRef = 78BBDCCC13A9B0970038C805 /* UIView+Layout.h */; };
+		78BBDCCF13A9B0970038C805 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BBDCCD13A9B0970038C805 /* UIView+Layout.m */; };
 		78D8F08E13A063E6003750D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F08D13A063E6003750D2 /* Foundation.framework */; };
 		78D8F09913A063E6003750D2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F09813A063E6003750D2 /* SenTestingKit.framework */; };
 		78D8F09B13A063E6003750D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F09A13A063E6003750D2 /* UIKit.framework */; };
@@ -59,6 +63,10 @@
 		7871840813A86D3200F30570 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		78BBDCC113A990960038C805 /* HEImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEImage.h; sourceTree = "<group>"; };
 		78BBDCC213A990960038C805 /* HEImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEImage.m; sourceTree = "<group>"; };
+		78BBDCC813A9AEF80038C805 /* HELabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HELabel.h; sourceTree = "<group>"; };
+		78BBDCC913A9AEF80038C805 /* HELabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HELabel.m; sourceTree = "<group>"; };
+		78BBDCCC13A9B0970038C805 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		78BBDCCD13A9B0970038C805 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
 		78D8F08A13A063E6003750D2 /* libHelium.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHelium.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D8F08D13A063E6003750D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78D8F09113A063E6003750D2 /* Helium-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Helium-Prefix.pch"; sourceTree = "<group>"; };
@@ -172,12 +180,16 @@
 				78E989AF13A06847005A72D4 /* HEContainer.h */,
 				78BBDCC113A990960038C805 /* HEImage.h */,
 				78BBDCC213A990960038C805 /* HEImage.m */,
+				78BBDCC813A9AEF80038C805 /* HELabel.h */,
+				78BBDCC913A9AEF80038C805 /* HELabel.m */,
 				78E989B013A06847005A72D4 /* HEContainer.m */,
 				78E989CF13A139A8005A72D4 /* HEParser.h */,
 				78E989D013A139A8005A72D4 /* HEParser.m */,
 				78E98A2013A6AF1E005A72D4 /* HEObject.h */,
 				78E98A1D13A6AE67005A72D4 /* HEParent.h */,
 				78E98A2213A6B3AC005A72D4 /* HEViewable.h */,
+				78BBDCCC13A9B0970038C805 /* UIView+Layout.h */,
+				78BBDCCD13A9B0970038C805 /* UIView+Layout.m */,
 			);
 			path = Helium;
 			sourceTree = "<group>";
@@ -227,6 +239,8 @@
 				787183F513A8693400F30570 /* TBXML.h in Headers */,
 				787183F713A8693400F30570 /* UIColor+Hex.h in Headers */,
 				78BBDCC313A990960038C805 /* HEImage.h in Headers */,
+				78BBDCCA13A9AEF80038C805 /* HELabel.h in Headers */,
+				78BBDCCE13A9B0970038C805 /* UIView+Layout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +349,8 @@
 				787183F613A8693400F30570 /* TBXML.m in Sources */,
 				787183F813A8693400F30570 /* UIColor+Hex.m in Sources */,
 				78BBDCC413A990960038C805 /* HEImage.m in Sources */,
+				78BBDCCB13A9AEF80038C805 /* HELabel.m in Sources */,
+				78BBDCCF13A9B0970038C805 /* UIView+Layout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

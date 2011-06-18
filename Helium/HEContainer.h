@@ -21,5 +21,6 @@
 @property (nonatomic, retain) NSNumber * height;
 
 @property (nonatomic, retain) NSString * background;
+@property (nonatomic, retain) NSString * click;
 
 @end

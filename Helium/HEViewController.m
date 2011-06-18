@@ -33,45 +33,54 @@
 
 - (void) loadPageFromFile:(NSString*)file {
 
-    NSLog(@" ");
-    NSLog(@"LOAD PAGE %@", file);
-
     NSString * extension = [file pathExtension];
     NSString * basename = [file stringByDeletingPathExtension];
     NSString * path = [[NSBundle mainBundle] pathForResource:basename ofType:extension];
     NSData * data = [NSData dataWithContentsOfFile:path];
     
+    
+
+    id<HEViewable> page = [HEParser parseData:data];
+    
+    [self loadPage:page];
+    
+}
+
+- (void) loadPageFromString:(NSString*)string {
+    id<HEViewable> page = [HEParser parseString:string];
+    [self loadPage:page];    
+}
+
+- (void) loadPage:(id<HEViewable>)page {
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"click" object:nil];
+
     for (UIView * view in self.view.subviews) {
         [view removeFromSuperview];
-
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:@"click" object:nil];
-    }
-    
+    }    
     
     // The background
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    
+    page.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+    page.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.view addSubview:page.view];
 
-    id<HEViewable> object = [HEParser parse:data];
-    
-    object.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
-    object.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.view addSubview:object.view];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onClick:) name:@"click" object:nil];    
-        
-//    if ([object isKindOfClass:[HEContainer class]]) {
-//        // hmm, then I need to 
-//    }
     
-    return;
 }
 
 - (void) onClick:(NSNotification*)note {
 
     NSLog(@"ON CLICK %@", [[note userInfo] objectForKey:@"url"]);
-
-    NSString * page = [[note userInfo] objectForKey:@"url"];
-    [self loadPageFromFile:page];
+        
+    if ([note.object conformsToProtocol:@protocol(HEViewable)]) {
+        if ([[(id<HEViewable>)note.object view] isDescendantOfView:self.view]) {
+            NSString * page = [[note userInfo] objectForKey:@"url"];
+            [self loadPageFromFile:page];            
+        }
+    }
     
 }
 

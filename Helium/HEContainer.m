@@ -17,13 +17,7 @@
 
 @implementation HEContainer
 @synthesize left, right, top, bottom, width, height;
-@synthesize children, background;
-
-- (id) init { 
-    if ((self = [super init])) {
-    }
-    return self;
-}
+@synthesize children, background, click;
 
 - (void) dealloc {
     [left release];
@@ -34,45 +28,36 @@
     [width release];
     [height release];
     
+    [click release];
+    
     [children release];
     [super dealloc];
 }
 
 - (void) didInitialize {
-    
-    // has it initialized yet? You're not supposed to say superview, really. Hmm... how annoying. 
-    
-    // Default Values
-    // self.frame = CGRectMake(left, top, width, height);
-    
-    // I think the point is that the PARENT is resposible for resizing the children, which 
-    // is why you don't want it to set its own width. 
-    
-    // so, I need some logic to do resizing, but basically... yeah. 
-    
-    // Do them a little later, here? That's kind of lame, just so the superview is set
 }
 
 - (UIView*) view {
     return self;
 }
 
-- (void)didMoveToSuperview {
-    
-    if (!self.frame.size.width) {
-        [self calculateLayoutWithLeft:self.left top:self.top right:self.right bottom:self.bottom width:self.width height:self.height];
+- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (self.click)
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"click" object:self userInfo:[NSDictionary dictionaryWithObject:self.click forKey:@"url"]];
+}
 
-        // Wait until our frame is set before adding children, so we don't miscalculate their frames. 
-        // Maybe this isn't the best place to do this. Really, I should be observing the superview's frame?
-        // Well, then I wouldn't need autoresizing masks, right? 
-        
-    }
-    
-    for (id<HEObject> child in self.children) {
-        if ([child conformsToProtocol:@protocol(HEViewable)]) 
-            [self addSubview:[(id<HEViewable>)child view]];
-    }
-    
+
+
+- (void)willMoveToSuperview:(UIView *)newSuperview {
+    [self.superview removeObserver:self forKeyPath:@"frame"];
+}
+
+- (void)didMoveToSuperview {
+    [self.superview addObserver:self forKeyPath:@"frame" options:0 context:nil];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    [self calculateLayoutWithLeft:self.left top:self.top right:self.right bottom:self.bottom width:self.width height:self.height];
 }
 
 - (void)setBackground:(NSString *)value {    
@@ -81,10 +66,11 @@
 
 - (void) addChild:(id<HEObject>)child {
 
-    if (!self.children) 
-        self.children = [NSMutableArray array];
+    if ([child conformsToProtocol:@protocol(HEViewable)]) 
+        [self addSubview:[(id<HEViewable>)child view]];
         
-    [self.children addObject:child];
+    // Later, accept more of them!
+
 }
 
 @end

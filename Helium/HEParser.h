@@ -11,6 +11,7 @@
 
 @interface HEParser : NSObject
 
-+ (id<HEViewable>) parse:(NSData*)data;
++ (id<HEViewable>) parseData:(NSData*)data;
++ (id<HEViewable>) parseString:(NSString*)string;
 
 @end

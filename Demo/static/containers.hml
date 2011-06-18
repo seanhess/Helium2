@@ -10,7 +10,7 @@
     <Container bottom="10" height="20" background="#0000FF"/>    
     
 	<Container top="140" right="0" height="60" width="20" background="#00FF00"/>
-	<Container top="140" left="0" height="60" width="20" background="#00FF00"/>    
+	<Container top="140" left="0" height="60" width="20" background="#00FF00" click="henry.hml"/>    
     
 </Container>
 

@@ -11,6 +11,9 @@
 #import "HEContainer.h"
 
 @interface HEParser ()
+
++ (id<HEViewable>) parseXML:(TBXML*)xml;
+
 + (id<HEObject>) parseElement:(TBXMLElement*)element;
 + (void) parseChildren:(TBXMLElement*)element object:(id<HEObject>)object;
 + (void) parseAttributes:(TBXMLElement*)element object:(id<HEObject>)object;
@@ -20,8 +23,15 @@
 
 @implementation HEParser
 
-+ (id<HEViewable>) parse:(NSData*)data {
-    TBXML * xml = [TBXML tbxmlWithXMLData:data];
++ (id<HEViewable>) parseData:(NSData*)data {
+    return [self parseXML:[TBXML tbxmlWithXMLData:data]];
+}
+
++ (id<HEViewable>) parseString:(NSString*)string {
+    return [self parseXML:[TBXML tbxmlWithXMLString:string]];
+}
+
++ (id<HEViewable>) parseXML:(TBXML*)xml {
     return (id<HEViewable>)[self parseElement:xml.rootXMLElement];
 }
 

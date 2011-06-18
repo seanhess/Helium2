@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HEViewable.h"
 
 @interface HEViewController : UIViewController
 
 // Re-loads the page and displays it
 - (void) loadPageFromFile:(NSString*)file;
+- (void) loadPageFromString:(NSString*)string;
+- (void) loadPage:(id<HEViewable>)page;
 
 @end

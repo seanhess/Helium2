@@ -25,6 +25,11 @@
 		78C11F6C13AD12F100546CDF /* TestLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C11F6913AD129800546CDF /* TestLayout.m */; };
 		78C11F6D13AD151100546CDF /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BBDCCD13A9B0970038C805 /* UIView+Layout.m */; };
 		78C11FBD13AD218500546CDF /* TestContainers.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C11FBC13AD218500546CDF /* TestContainers.m */; };
+		78C11FC313AD2BC800546CDF /* HEButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 78C11FC113AD2BC700546CDF /* HEButton.h */; };
+		78C11FC413AD2BC800546CDF /* HEButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C11FC213AD2BC700546CDF /* HEButton.m */; };
+		78C11FC613AD2BFD00546CDF /* HELayoutable.h in Headers */ = {isa = PBXBuildFile; fileRef = 78C11FC513AD2BFD00546CDF /* HELayoutable.h */; };
+		78C11FC913AE994C00546CDF /* UIView+HEHooks.h in Headers */ = {isa = PBXBuildFile; fileRef = 78C11FC713AE994B00546CDF /* UIView+HEHooks.h */; };
+		78C11FCA13AE994C00546CDF /* UIView+HEHooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C11FC813AE994B00546CDF /* UIView+HEHooks.m */; };
 		78D8F08E13A063E6003750D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F08D13A063E6003750D2 /* Foundation.framework */; };
 		78D8F09913A063E6003750D2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F09813A063E6003750D2 /* SenTestingKit.framework */; };
 		78D8F09B13A063E6003750D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F09A13A063E6003750D2 /* UIKit.framework */; };
@@ -75,6 +80,11 @@
 		78C11F6913AD129800546CDF /* TestLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLayout.m; sourceTree = "<group>"; };
 		78C11FBB13AD218500546CDF /* TestContainers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestContainers.h; sourceTree = "<group>"; };
 		78C11FBC13AD218500546CDF /* TestContainers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestContainers.m; sourceTree = "<group>"; };
+		78C11FC113AD2BC700546CDF /* HEButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEButton.h; sourceTree = "<group>"; };
+		78C11FC213AD2BC700546CDF /* HEButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEButton.m; sourceTree = "<group>"; };
+		78C11FC513AD2BFD00546CDF /* HELayoutable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HELayoutable.h; sourceTree = "<group>"; };
+		78C11FC713AE994B00546CDF /* UIView+HEHooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HEHooks.h"; sourceTree = "<group>"; };
+		78C11FC813AE994B00546CDF /* UIView+HEHooks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HEHooks.m"; sourceTree = "<group>"; };
 		78D8F08A13A063E6003750D2 /* libHelium.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHelium.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D8F08D13A063E6003750D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78D8F09113A063E6003750D2 /* Helium-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Helium-Prefix.pch"; sourceTree = "<group>"; };
@@ -186,18 +196,23 @@
 				78E989C113A06A61005A72D4 /* HEViewController.h */,
 				78E989C213A06A61005A72D4 /* HEViewController.m */,
 				78E989AF13A06847005A72D4 /* HEContainer.h */,
+				78E989B013A06847005A72D4 /* HEContainer.m */,
 				78BBDCC113A990960038C805 /* HEImage.h */,
 				78BBDCC213A990960038C805 /* HEImage.m */,
 				78BBDCC813A9AEF80038C805 /* HELabel.h */,
 				78BBDCC913A9AEF80038C805 /* HELabel.m */,
-				78E989B013A06847005A72D4 /* HEContainer.m */,
+				78C11FC113AD2BC700546CDF /* HEButton.h */,
+				78C11FC213AD2BC700546CDF /* HEButton.m */,
 				78E989CF13A139A8005A72D4 /* HEParser.h */,
 				78E989D013A139A8005A72D4 /* HEParser.m */,
 				78E98A2013A6AF1E005A72D4 /* HEObject.h */,
 				78E98A1D13A6AE67005A72D4 /* HEParent.h */,
 				78E98A2213A6B3AC005A72D4 /* HEViewable.h */,
+				78C11FC513AD2BFD00546CDF /* HELayoutable.h */,
 				78BBDCCC13A9B0970038C805 /* UIView+Layout.h */,
 				78BBDCCD13A9B0970038C805 /* UIView+Layout.m */,
+				78C11FC713AE994B00546CDF /* UIView+HEHooks.h */,
+				78C11FC813AE994B00546CDF /* UIView+HEHooks.m */,
 			);
 			path = Helium;
 			sourceTree = "<group>";
@@ -254,6 +269,9 @@
 				78BBDCCA13A9AEF80038C805 /* HELabel.h in Headers */,
 				78BBDCCE13A9B0970038C805 /* UIView+Layout.h in Headers */,
 				78C11F6A13AD129800546CDF /* TestLayout.h in Headers */,
+				78C11FC313AD2BC800546CDF /* HEButton.h in Headers */,
+				78C11FC613AD2BFD00546CDF /* HELayoutable.h in Headers */,
+				78C11FC913AE994C00546CDF /* UIView+HEHooks.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +382,8 @@
 				78BBDCC413A990960038C805 /* HEImage.m in Sources */,
 				78BBDCCB13A9AEF80038C805 /* HELabel.m in Sources */,
 				78BBDCCF13A9B0970038C805 /* UIView+Layout.m in Sources */,
+				78C11FC413AD2BC800546CDF /* HEButton.m in Sources */,
+				78C11FCA13AE994C00546CDF /* UIView+HEHooks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

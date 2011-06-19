@@ -9,16 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "HEParent.h"
 #import "HEViewable.h"
+#import "HELayoutable.h"
 
-@interface HEContainer : UIView <HEParent, HEViewable>
-
-@property (nonatomic, retain) NSNumber * left;
-@property (nonatomic, retain) NSNumber * right;
-@property (nonatomic, retain) NSNumber * top;
-@property (nonatomic, retain) NSNumber * bottom;
-
-@property (nonatomic, retain) NSNumber * width;
-@property (nonatomic, retain) NSNumber * height;
+@interface HEContainer : UIView <HEParent, HEViewable, HELayoutable>
 
 @property (nonatomic, retain) NSString * background;
 @property (nonatomic, retain) NSString * click;

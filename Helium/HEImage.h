@@ -8,19 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "HEViewable.h"
+#import "HELayoutable.h"
 
-@interface HEImage : UIImageView <HEViewable>
-
-@property (nonatomic, retain) NSNumber * left;
-@property (nonatomic, retain) NSNumber * right;
-@property (nonatomic, retain) NSNumber * top;
-@property (nonatomic, retain) NSNumber * bottom;
-
-@property (nonatomic, retain) NSNumber * width;
-@property (nonatomic, retain) NSNumber * height;
+@interface HEImage : UIImageView <HEViewable, HELayoutable>
 
 @property (nonatomic, retain) NSString * source;
-
 @property (nonatomic, retain) NSString * click;
 
 @end

@@ -24,10 +24,11 @@
 
 - (void)calculateLayoutWithLeft:(NSNumber*)left top:(NSNumber*)top right:(NSNumber*)right bottom:(NSNumber*)bottom width:(NSNumber*)width height:(NSNumber*)height nativeWidth:(NSNumber*)nativeWidth nativeHeight:(NSNumber*)nativeHeight {
     
-    //NSAssert(self.superview, @"Missing superview when calculating size!");
+    NSAssert(self.superview, @"Missing superview when calculating size!");
     
 
     UIViewAutoresizing mask = UIViewAutoresizingNone;
+
     
     
     
@@ -56,7 +57,7 @@
         w = nativeWidth.intValue;    
     
     else {
-        w = UIViewLayoutWidth - left.intValue - right.intValue;
+        w = self.superview.bounds.size.width - left.intValue - right.intValue;
         mask = mask | UIViewAutoresizingFlexibleWidth;    
     }
         
@@ -69,7 +70,7 @@
         h = nativeHeight.intValue;        
 
     else {
-        h = UIViewLayoutHeight - top.intValue - bottom.intValue;
+        h = self.superview.bounds.size.height - top.intValue - bottom.intValue;
         mask = mask | UIViewAutoresizingFlexibleHeight;          
     }
 
@@ -79,7 +80,7 @@
     // X
 
     if (shouldPegRight) {
-        x = UIViewLayoutWidth - right.intValue - w;
+        x = self.superview.bounds.size.width - right.intValue - w;
         mask = mask | UIViewAutoresizingFlexibleLeftMargin;                         
     }
         
@@ -91,7 +92,7 @@
     // Y
         
     if (shouldPegBottom) {
-        y = UIViewLayoutHeight - bottom.intValue - h;
+        y = self.superview.bounds.size.height - bottom.intValue - h;
         mask = mask | UIViewAutoresizingFlexibleTopMargin;                    
     }
     

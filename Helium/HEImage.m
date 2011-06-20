@@ -34,6 +34,11 @@
 
     if (self.click) 
         self.userInteractionEnabled = YES;
+        
+    // You have to set the autoresizing mask to get the frame to fire when the superview's frame changes
+    self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    [self addObserver:self forKeyPath:@"frame" options:0 context:nil];            
+    
 }
 
 - (UIView*)view {
@@ -44,20 +49,17 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"click" object:self userInfo:[NSDictionary dictionaryWithObject:self.click forKey:@"url"]];
 }
 
-- (void)willMoveToSuperview:(UIView *)newSuperview {
-    [self.superview removeObserver:self forKeyPath:@"frame"];
-}
-
-- (void)didMoveToSuperview {
-    [self.superview addObserver:self forKeyPath:@"frame" options:0 context:nil];
-}
-
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 
-    NSNumber * imageWidth = [NSNumber numberWithFloat:self.image.size.width];
-    NSNumber * imageHeight = [NSNumber numberWithFloat:self.image.size.height];
+    if (self.superview && keyPath == @"frame") {
+    
+        [self removeObserver:self forKeyPath:@"frame"];
+        
+        NSNumber * imageWidth = [NSNumber numberWithFloat:self.image.size.width];
+        NSNumber * imageHeight = [NSNumber numberWithFloat:self.image.size.height];
 
-    [self calculateLayoutWithLeft:self.left top:self.top right:self.right bottom:self.bottom width:self.width height:self.height nativeWidth:imageWidth nativeHeight:imageHeight];
+        [self calculateLayoutWithLeft:self.left top:self.top right:self.right bottom:self.bottom width:self.width height:self.height nativeWidth:imageWidth nativeHeight:imageHeight];
+    }
     
 }
 

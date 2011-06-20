@@ -30,7 +30,8 @@
 }
 
 - (void) didInitialize {
-
+    self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    [self addObserver:self forKeyPath:@"frame" options:0 context:nil];    
 }
 
 
@@ -38,16 +39,12 @@
     self.backgroundColor = [UIColor colorWithCSS:value];
 }
 
-- (void)willMoveToSuperview:(UIView *)newSuperview {
-    [self.superview removeObserver:self forKeyPath:@"frame"];
-}
-
-- (void)didMoveToSuperview {
-    [self.superview addObserver:self forKeyPath:@"frame" options:0 context:nil];
-}
-
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    [self calculateLayoutWithLeft:self.left top:self.top right:self.right bottom:self.bottom width:self.width height:self.height];
+
+    if (self.superview && keyPath == @"frame") {
+        [self removeObserver:self forKeyPath:@"frame"];
+        [self calculateFrameWithLayout:self];
+    }    
 }
 
 

@@ -11,21 +11,24 @@
 
 @implementation UIView (Layout)
 
+- (void) calculateFrameWithLayout:(id<HELayoutable>)layout {
 
+    [self calculateLayoutWithLeft:layout.left top:layout.top right:layout.right bottom:layout.bottom width:layout.width height:layout.height nativeWidth:nil nativeHeight:nil];    
+}
 
 - (void) calculateLayoutWithLeft:(NSNumber *)left top:(NSNumber *)top right:(NSNumber *)right bottom:(NSNumber *)bottom width:(NSNumber *)width height:(NSNumber *)height {
 
     [self calculateLayoutWithLeft:left top:top right:right bottom:bottom width:width height:height nativeWidth:nil nativeHeight:nil];
-
 }
 
 
 - (void)calculateLayoutWithLeft:(NSNumber*)left top:(NSNumber*)top right:(NSNumber*)right bottom:(NSNumber*)bottom width:(NSNumber*)width height:(NSNumber*)height nativeWidth:(NSNumber*)nativeWidth nativeHeight:(NSNumber*)nativeHeight {
     
+    //NSAssert(self.superview, @"Missing superview when calculating size!");
+    
 
     UIViewAutoresizing mask = UIViewAutoresizingNone;
     
-
     
     
     // -width: calculate width based on left and right
@@ -53,7 +56,7 @@
         w = nativeWidth.intValue;    
     
     else {
-        w = self.superview.bounds.size.width - left.intValue - right.intValue;
+        w = UIViewLayoutWidth - left.intValue - right.intValue;
         mask = mask | UIViewAutoresizingFlexibleWidth;    
     }
         
@@ -66,7 +69,7 @@
         h = nativeHeight.intValue;        
 
     else {
-        h = self.superview.bounds.size.height - top.intValue - bottom.intValue;
+        h = UIViewLayoutHeight - top.intValue - bottom.intValue;
         mask = mask | UIViewAutoresizingFlexibleHeight;          
     }
 
@@ -76,11 +79,11 @@
     // X
 
     if (shouldPegRight) {
-        x = self.superview.bounds.size.width - right.intValue - w;
+        x = UIViewLayoutWidth - right.intValue - w;
         mask = mask | UIViewAutoresizingFlexibleLeftMargin;                         
     }
         
-    else 
+    else
         x = left.intValue;
         
         
@@ -88,7 +91,7 @@
     // Y
         
     if (shouldPegBottom) {
-        y = self.superview.bounds.size.height - bottom.intValue - h;
+        y = UIViewLayoutHeight - bottom.intValue - h;
         mask = mask | UIViewAutoresizingFlexibleTopMargin;                    
     }
     
@@ -109,6 +112,8 @@
 
 
 // MAX WIDTH, MAX HEIGHT
+
+
 
 
 @end

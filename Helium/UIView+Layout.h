@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HELayoutable.h"
+
+#define UIViewLayoutWidth 10000
+#define UIViewLayoutHeight 10000
 
 @interface UIView (Layout)
+
+- (void)calculateFrameWithLayout:(id<HELayoutable>)layout;
 
 - (void)calculateLayoutWithLeft:(NSNumber*)left top:(NSNumber*)top right:(NSNumber*)right bottom:(NSNumber*)bottom width:(NSNumber*)width height:(NSNumber*)height nativeWidth:(NSNumber*)nativeWidth nativeHeight:(NSNumber*)nativeHeight; 
 

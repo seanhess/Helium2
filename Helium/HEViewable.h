@@ -11,4 +11,5 @@
 
 @protocol HEViewable <HEObject>
 - (UIView*)view;
+- (void) didAddAsChild;
 @end

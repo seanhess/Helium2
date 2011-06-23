@@ -17,6 +17,7 @@
 @synthesize left, right, top, bottom, width, height;
 @synthesize click;
 @synthesize background;
+@synthesize tap;
 
 - (id) init {
     if ((self = [super init])) {
@@ -26,6 +27,13 @@
 }
 
 - (void) dealloc {
+
+    // well, yeah, of course these things don't stick around
+    // We don't want them to (unless we want them to)
+    NSLog(@"DEALLOC HEContainer");
+
+    [self.view removeGestureRecognizer:self.tap];    
+
     [left release];
     [right release];
     [top release];
@@ -36,6 +44,8 @@
     
     [click release];
     [background release];
+    
+    [tap release];
     
     [super dealloc];
 }
@@ -49,8 +59,8 @@
     if (self.click) {
         self.view.userInteractionEnabled = YES;
         // Listen for clicks
-        UITapGestureRecognizer * tap = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap:)] autorelease];
-        [self.view addGestureRecognizer:tap];    
+        self.tap = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap:)] autorelease];
+        [self.view addGestureRecognizer:self.tap];    
     }
     
     // You have to set the autoresizing mask to get the frame to fire when the superview's frame changes
@@ -70,6 +80,16 @@
         self.view.backgroundColor = [UIColor colorWithCSS:self.background];
 
     
+    
+    
+    
+    // BUG: TOOD: HACK: Need to change this so it somehow attaches itself to the view
+    // because it needs to observe it, but it doesn't belong to the view at all
+    // I'd have to create an "observers" or a "behaviors" to an object, or something. 
+    
+    // Needs to happen for both taps, and for observing layouts
+    
+    [self retain];    
 }
 
 - (void) onTap:(UIGestureRecognizer*)tap {

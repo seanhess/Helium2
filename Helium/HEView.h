@@ -16,5 +16,6 @@
 @interface HEView : HEBase <HEViewable, HELayoutable>
 @property (nonatomic, retain) NSString * background;
 @property (nonatomic, retain) NSString * click;
+@property (nonatomic, retain) UIGestureRecognizer * tap;
 - (void) layout;
 @end

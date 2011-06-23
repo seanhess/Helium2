@@ -43,7 +43,7 @@
     // TODO: change to support other namespaces
     NSString * className = [NSString stringWithFormat:@"HE%@", [TBXML elementName:element]];
     Class class = NSClassFromString(className);
-    object = [class new];
+    object = [[class new] autorelease];
     
     // attaches to it
     [self parseAttributes:element object:object];

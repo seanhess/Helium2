@@ -75,8 +75,6 @@
     if (self.background)
         self.view.backgroundColor = [UIColor colorWithCSS:self.background];
 
-    
-    
 }
 
 - (void) onTap:(UIGestureRecognizer*)tap {

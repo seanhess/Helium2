@@ -14,6 +14,8 @@
 		7837178213B3ECEB00C0600C /* HEBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 7837178013B3ECE900C0600C /* HEBase.h */; };
 		7837178313B3ECEB00C0600C /* HEBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7837178113B3ECEA00C0600C /* HEBase.m */; };
 		7837178513B3EF6400C0600C /* HEViewControllable.h in Headers */ = {isa = PBXBuildFile; fileRef = 7837178413B3EF6200C0600C /* HEViewControllable.h */; };
+		7837178813B400F100C0600C /* HEActionLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 7837178613B400EE00C0600C /* HEActionLink.h */; };
+		7837178913B400F100C0600C /* HEActionLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 7837178713B400EF00C0600C /* HEActionLink.m */; };
 		787183F213A8693400F30570 /* NSDataAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 787183EB13A8693400F30570 /* NSDataAdditions.h */; };
 		787183F313A8693400F30570 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 787183EC13A8693400F30570 /* NSDataAdditions.m */; };
 		787183F413A8693400F30570 /* TBXML-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 787183ED13A8693400F30570 /* TBXML-Prefix.pch */; };
@@ -78,6 +80,8 @@
 		7837178013B3ECE900C0600C /* HEBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEBase.h; sourceTree = "<group>"; };
 		7837178113B3ECEA00C0600C /* HEBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEBase.m; sourceTree = "<group>"; };
 		7837178413B3EF6200C0600C /* HEViewControllable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEViewControllable.h; sourceTree = "<group>"; };
+		7837178613B400EE00C0600C /* HEActionLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEActionLink.h; sourceTree = "<group>"; };
+		7837178713B400EF00C0600C /* HEActionLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEActionLink.m; sourceTree = "<group>"; };
 		787183EB13A8693400F30570 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
 		787183EC13A8693400F30570 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		787183ED13A8693400F30570 /* TBXML-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML-Prefix.pch"; sourceTree = "<group>"; };
@@ -240,6 +244,8 @@
 				78BBDCCD13A9B0970038C805 /* UIView+Layout.m */,
 				7893307D13B1296000C59E98 /* HELoader.h */,
 				7893307E13B1296000C59E98 /* HELoader.m */,
+				7837178613B400EE00C0600C /* HEActionLink.h */,
+				7837178713B400EF00C0600C /* HEActionLink.m */,
 			);
 			path = Helium;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 				7837177B13B3E39F00C0600C /* HETabs.h in Headers */,
 				7837178213B3ECEB00C0600C /* HEBase.h in Headers */,
 				7837178513B3EF6400C0600C /* HEViewControllable.h in Headers */,
+				7837178813B400F100C0600C /* HEActionLink.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +427,7 @@
 				7837177713B3E29300C0600C /* HENavigation.m in Sources */,
 				7837177C13B3E39F00C0600C /* HETabs.m in Sources */,
 				7837178313B3ECEB00C0600C /* HEBase.m in Sources */,
+				7837178913B400F100C0600C /* HEActionLink.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

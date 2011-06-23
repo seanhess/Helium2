@@ -7,15 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HEViewable.h"
-#import "HELayoutable.h"
+#import "HEView.h"
 
-@interface HEButton : NSObject <HEViewable, HELayoutable>
+@interface HEButton : HEView
 
-@property (nonatomic, retain) NSString * background;
 @property (nonatomic, retain) NSString * text;
-
-//- (void) setBackground:(NSString*)value;
-//- (void) setText:(NSString*)value;
 
 @end

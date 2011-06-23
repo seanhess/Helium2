@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HEViewable.h"
-#import "HELayoutable.h"
+#import "HEView.h"
 
-@interface HELabel : UILabel <HEViewable, HELayoutable>
-
-- (void) setBackground:(NSString*)value;
-
+@interface HELabel : HEView
+@property (nonatomic, retain) NSString * text;
 @end

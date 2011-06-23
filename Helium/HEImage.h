@@ -7,12 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HEViewable.h"
-#import "HELayoutable.h"
+#import "HEView.h"
 
-@interface HEImage : UIImageView <HEViewable, HELayoutable>
+@interface HEImage : HEView <HEViewable, HELayoutable>
 
 @property (nonatomic, retain) NSString * source;
-@property (nonatomic, retain) NSString * click;
 
 @end

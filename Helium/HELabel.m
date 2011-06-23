@@ -10,41 +10,28 @@
 #import "UIView+Layout.h"
 #import "UIColor+Hex.h"
 
-@implementation HELabel
+@interface HELabel ()
+@property (nonatomic, retain) UILabel * label;
+@end
 
-@synthesize left, right, top, bottom, width, height;
+
+@implementation HELabel
+@synthesize label, text;
 
 - (void) dealloc {
-    [left release];
-    [right release];
-    [top release];
-    [bottom release];
-    
-    [width release];
-    [height release];    
+    [label release];
+    [text release];
     [super dealloc];
 }
 
 - (UIView*)view {
-    return self;
+    return self.label;
 }
 
 - (void) didInitialize {
-    self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    [self addObserver:self forKeyPath:@"frame" options:0 context:nil];    
-}
-
-
-- (void)setBackground:(NSString *)value {    
-    self.backgroundColor = [UIColor colorWithCSS:value];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-
-    if (self.superview && keyPath == @"frame") {
-        [self removeObserver:self forKeyPath:@"frame"];
-        [self calculateFrameWithLayout:self];
-    }    
+    self.label = [UILabel new];
+    self.label.text = text;
+    [super didInitialize];
 }
 
 

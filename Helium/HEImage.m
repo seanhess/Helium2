@@ -40,14 +40,10 @@
 }
 
 - (void)layout {
-    if (self.view.superview) {
-        [self.view removeObserver:self forKeyPath:@"frame"];
-    
-        NSNumber * imageWidth = [NSNumber numberWithFloat:self.imageView.image.size.width];
-        NSNumber * imageHeight = [NSNumber numberWithFloat:self.imageView.image.size.height];
+    NSNumber * imageWidth = [NSNumber numberWithFloat:self.imageView.image.size.width];
+    NSNumber * imageHeight = [NSNumber numberWithFloat:self.imageView.image.size.height];
 
-        [self.view calculateLayoutWithLeft:self.left top:self.top right:self.right bottom:self.bottom width:self.width height:self.height nativeWidth:imageWidth nativeHeight:imageHeight];    
-    }
+    [self.view calculateLayoutWithLeft:self.left top:self.top right:self.right bottom:self.bottom width:self.width height:self.height nativeWidth:imageWidth nativeHeight:imageHeight];    
 }
 
 @end

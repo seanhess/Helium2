@@ -10,5 +10,6 @@
 #import "HEObject.h"
 
 @protocol HEParent <HEObject>
+@property (nonatomic, retain) NSMutableArray * children;
 - (void) addChild:(id<HEObject>)child;
 @end

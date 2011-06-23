@@ -10,10 +10,10 @@
 #import "HEViewable.h"
 #import "HELayoutable.h"
 #import "HEParent.h"
+#import "HEBase.h"
 #import <UIKit/UIKit.h>
 
-@interface HEView : UIResponder <HEViewable, HELayoutable, HEParent>
-@property (nonatomic, retain) NSMutableArray * children;
+@interface HEView : HEBase <HEViewable, HELayoutable>
 @property (nonatomic, retain) NSString * background;
 @property (nonatomic, retain) NSString * click;
 - (void) layout;

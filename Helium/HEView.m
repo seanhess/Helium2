@@ -16,7 +16,7 @@
 @implementation HEView
 @synthesize left, right, top, bottom, width, height;
 @synthesize click;
-@synthesize children, background;
+@synthesize background;
 
 - (id) init {
     if ((self = [super init])) {
@@ -35,7 +35,6 @@
     [height release];
     
     [click release];
-    [children release];
     [background release];
     
     [super dealloc];
@@ -79,20 +78,14 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 
-    if (keyPath == @"frame") {
+    if (keyPath == @"frame" && self.view.superview) {
+        [self.view removeObserver:self forKeyPath:@"frame"];    
         [self layout];
     }
 }
 
 - (void)layout {
-    if (self.view.superview) {
-        [self.view removeObserver:self forKeyPath:@"frame"];
-        [self.view calculateFrameWithLayout:self];
-    }
-}
-
-- (void) addChild:(id<HEObject>)child {
-    [children addObject:child];
+    [self.view calculateFrameWithLayout:self];
 }
 
 

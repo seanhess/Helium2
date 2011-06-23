@@ -38,12 +38,9 @@
     NSString * path = [[NSBundle mainBundle] pathForResource:basename ofType:extension];
     NSData * data = [NSData dataWithContentsOfFile:path];
     
-    
-
     id<HEViewable> page = [HEParser parseData:data];
     
     [self loadPage:page];
-    
 }
 
 - (void) loadPageFromString:(NSString*)string {

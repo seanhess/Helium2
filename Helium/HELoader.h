@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HEViewControllable.h"
 
 @interface HELoader : NSObject
+
++ (id<HEObject>) loadPageFromFile:(NSString*)file;
 
 @end

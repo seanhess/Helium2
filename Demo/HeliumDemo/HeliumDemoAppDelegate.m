@@ -10,6 +10,7 @@
 #import "HEViewController.h"
 #import "HEViewControllable.h"
 #import "HEParser.h"
+#import "HELoader.h"
 
 @implementation HeliumDemoAppDelegate
 
@@ -20,14 +21,7 @@
     // Ok, I need to let it parse, then have SOMETHING create me a thang
     // .viewController? Right? 
     
-    NSString * file = @"containers.hml";
-    NSString * extension = [file pathExtension];
-    NSString * basename = [file stringByDeletingPathExtension];
-    NSString * path = [[NSBundle mainBundle] pathForResource:basename ofType:extension];
-    NSData * data = [NSData dataWithContentsOfFile:path];
-    
-    id<HEViewControllable> page = (id<HEViewControllable>)[HEParser parseData:data];
-    
+    id<HEViewControllable> page = (id<HEViewControllable>)[HELoader loadPageFromFile:@"containers.hml"];
     UIViewController * viewController = page.viewController;
     
     // Override point for customization after application launch.

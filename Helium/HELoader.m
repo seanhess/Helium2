@@ -7,7 +7,18 @@
 //
 
 #import "HELoader.h"
+#import "HEParser.h"
 
 @implementation HELoader
+
++ (id<HEObject>) loadPageFromFile:(NSString*)file {
+    NSString * extension = [file pathExtension];
+    NSString * basename = [file stringByDeletingPathExtension];
+    NSString * path = [[NSBundle mainBundle] pathForResource:basename ofType:extension];
+    NSData * data = [NSData dataWithContentsOfFile:path];
+    
+    id<HEViewControllable> page = (id<HEViewControllable>)[HEParser parseData:data];
+    return page;
+}
 
 @end

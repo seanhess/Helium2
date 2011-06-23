@@ -9,6 +9,8 @@
 
 #import "HEViewController.h"
 #import "HEParser.h"
+#import "HEViewable.h"
+#import "HELoader.h"
 
 @implementation HEViewController
 
@@ -47,13 +49,14 @@
 
 - (void) onClick:(NSNotification*)note {
 
-//    if ([note.object conformsToProtocol:@protocol(HEViewable)]) {
-//        if ([[(id<HEViewable>)note.object view] isDescendantOfView:self.view]) {
-//            NSString * page = [[note userInfo] objectForKey:@"url"];
-//            [self loadPageFromFile:page];            
-//        }
-//    }
-//    
+    if ([note.object conformsToProtocol:@protocol(HEViewable)]) {
+        if ([[(id<HEViewable>)note.object view] isDescendantOfView:self.view]) {
+            NSString * url = [[note userInfo] objectForKey:@"url"];
+            id<HEViewable> page = (id<HEViewable>)[HELoader loadPageFromFile:url];
+            [self loadPage:page];
+        }
+    }
+    
 }
 
 #pragma mark - View lifecycle

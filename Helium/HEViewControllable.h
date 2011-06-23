@@ -6,7 +6,7 @@
 //  Copyright 2011 I.TV. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "HEObject.h"
 
 @protocol HEViewControllable <HEObject>

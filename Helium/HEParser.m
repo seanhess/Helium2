@@ -23,11 +23,11 @@
 
 @implementation HEParser
 
-+ (id<HEViewable>) parseData:(NSData*)data {
++ (id<HEObject>) parseData:(NSData*)data {
     return [self parseXML:[TBXML tbxmlWithXMLData:data]];
 }
 
-+ (id<HEViewable>) parseString:(NSString*)string {
++ (id<HEObject>) parseString:(NSString*)string {
     return [self parseXML:[TBXML tbxmlWithXMLString:string]];
 }
 

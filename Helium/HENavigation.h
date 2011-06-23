@@ -6,9 +6,10 @@
 //  Copyright 2011 I.TV. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "HEParent.h"
+#import <UIKit/UIKit.h>
+#import "HEBase.h"
+#import "HEViewControllable.h"
 
-@interface HENavigation : NSObject
+@interface HENavigation : HEBase <HEViewControllable>
 
 @end

@@ -13,6 +13,7 @@
 		7837177C13B3E39F00C0600C /* HETabs.m in Sources */ = {isa = PBXBuildFile; fileRef = 7837177A13B3E39E00C0600C /* HETabs.m */; };
 		7837178213B3ECEB00C0600C /* HEBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 7837178013B3ECE900C0600C /* HEBase.h */; };
 		7837178313B3ECEB00C0600C /* HEBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7837178113B3ECEA00C0600C /* HEBase.m */; };
+		7837178513B3EF6400C0600C /* HEViewControllable.h in Headers */ = {isa = PBXBuildFile; fileRef = 7837178413B3EF6200C0600C /* HEViewControllable.h */; };
 		787183F213A8693400F30570 /* NSDataAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 787183EB13A8693400F30570 /* NSDataAdditions.h */; };
 		787183F313A8693400F30570 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 787183EC13A8693400F30570 /* NSDataAdditions.m */; };
 		787183F413A8693400F30570 /* TBXML-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 787183ED13A8693400F30570 /* TBXML-Prefix.pch */; };
@@ -38,8 +39,6 @@
 		78C11FC313AD2BC800546CDF /* HEButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 78C11FC113AD2BC700546CDF /* HEButton.h */; };
 		78C11FC413AD2BC800546CDF /* HEButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C11FC213AD2BC700546CDF /* HEButton.m */; };
 		78C11FC613AD2BFD00546CDF /* HELayoutable.h in Headers */ = {isa = PBXBuildFile; fileRef = 78C11FC513AD2BFD00546CDF /* HELayoutable.h */; };
-		78C11FC913AE994C00546CDF /* UIView+HEHooks.h in Headers */ = {isa = PBXBuildFile; fileRef = 78C11FC713AE994B00546CDF /* UIView+HEHooks.h */; };
-		78C11FCA13AE994C00546CDF /* UIView+HEHooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C11FC813AE994B00546CDF /* UIView+HEHooks.m */; };
 		78D8F08E13A063E6003750D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F08D13A063E6003750D2 /* Foundation.framework */; };
 		78D8F09913A063E6003750D2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F09813A063E6003750D2 /* SenTestingKit.framework */; };
 		78D8F09B13A063E6003750D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F09A13A063E6003750D2 /* UIKit.framework */; };
@@ -78,6 +77,7 @@
 		7837177A13B3E39E00C0600C /* HETabs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HETabs.m; sourceTree = "<group>"; };
 		7837178013B3ECE900C0600C /* HEBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEBase.h; sourceTree = "<group>"; };
 		7837178113B3ECEA00C0600C /* HEBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEBase.m; sourceTree = "<group>"; };
+		7837178413B3EF6200C0600C /* HEViewControllable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEViewControllable.h; sourceTree = "<group>"; };
 		787183EB13A8693400F30570 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
 		787183EC13A8693400F30570 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		787183ED13A8693400F30570 /* TBXML-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML-Prefix.pch"; sourceTree = "<group>"; };
@@ -103,8 +103,6 @@
 		78C11FC113AD2BC700546CDF /* HEButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEButton.h; sourceTree = "<group>"; };
 		78C11FC213AD2BC700546CDF /* HEButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEButton.m; sourceTree = "<group>"; };
 		78C11FC513AD2BFD00546CDF /* HELayoutable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HELayoutable.h; sourceTree = "<group>"; };
-		78C11FC713AE994B00546CDF /* UIView+HEHooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HEHooks.h"; sourceTree = "<group>"; };
-		78C11FC813AE994B00546CDF /* UIView+HEHooks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HEHooks.m"; sourceTree = "<group>"; };
 		78D8F08A13A063E6003750D2 /* libHelium.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHelium.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D8F08D13A063E6003750D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78D8F09113A063E6003750D2 /* Helium-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Helium-Prefix.pch"; sourceTree = "<group>"; };
@@ -236,11 +234,10 @@
 				7837178013B3ECE900C0600C /* HEBase.h */,
 				7837178113B3ECEA00C0600C /* HEBase.m */,
 				78E98A2213A6B3AC005A72D4 /* HEViewable.h */,
+				7837178413B3EF6200C0600C /* HEViewControllable.h */,
 				78C11FC513AD2BFD00546CDF /* HELayoutable.h */,
 				78BBDCCC13A9B0970038C805 /* UIView+Layout.h */,
 				78BBDCCD13A9B0970038C805 /* UIView+Layout.m */,
-				78C11FC713AE994B00546CDF /* UIView+HEHooks.h */,
-				78C11FC813AE994B00546CDF /* UIView+HEHooks.m */,
 				7893307D13B1296000C59E98 /* HELoader.h */,
 				7893307E13B1296000C59E98 /* HELoader.m */,
 			);
@@ -301,12 +298,12 @@
 				78C11F6A13AD129800546CDF /* TestLayout.h in Headers */,
 				78C11FC313AD2BC800546CDF /* HEButton.h in Headers */,
 				78C11FC613AD2BFD00546CDF /* HELayoutable.h in Headers */,
-				78C11FC913AE994C00546CDF /* UIView+HEHooks.h in Headers */,
 				7893306B13AFC72D00C59E98 /* HEView.h in Headers */,
 				7893307F13B1296100C59E98 /* HELoader.h in Headers */,
 				7837177613B3E29300C0600C /* HENavigation.h in Headers */,
 				7837177B13B3E39F00C0600C /* HETabs.h in Headers */,
 				7837178213B3ECEB00C0600C /* HEBase.h in Headers */,
+				7837178513B3EF6400C0600C /* HEViewControllable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,7 +415,6 @@
 				78BBDCCB13A9AEF80038C805 /* HELabel.m in Sources */,
 				78BBDCCF13A9B0970038C805 /* UIView+Layout.m in Sources */,
 				78C11FC413AD2BC800546CDF /* HEButton.m in Sources */,
-				78C11FCA13AE994C00546CDF /* UIView+HEHooks.m in Sources */,
 				7893306C13AFC72D00C59E98 /* HEView.m in Sources */,
 				7893308013B1296100C59E98 /* HELoader.m in Sources */,
 				7837177713B3E29300C0600C /* HENavigation.m in Sources */,

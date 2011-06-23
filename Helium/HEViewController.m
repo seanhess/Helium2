@@ -14,12 +14,13 @@
 
 - (id) init {
     if ((self = [super init])) {
-
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onClick:) name:@"click" object:nil];    
     }
     return self;
 }
 
 - (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"click" object:nil];
     [super dealloc];
 }
 
@@ -31,54 +32,28 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void) loadPageFromFile:(NSString*)file {
-
-    NSString * extension = [file pathExtension];
-    NSString * basename = [file stringByDeletingPathExtension];
-    NSString * path = [[NSBundle mainBundle] pathForResource:basename ofType:extension];
-    NSData * data = [NSData dataWithContentsOfFile:path];
-    
-    id<HEViewable> page = [HEParser parseData:data];
-    
-    [self loadPage:page];
-}
-
 - (void) loadPageFromString:(NSString*)string {
-    id<HEViewable> page = [HEParser parseString:string];
-    [self loadPage:page];    
+    id<HEObject> page = [HEParser parseString:string];
+    [self loadPage:(id<HEViewable>)page];    
 }
 
 - (void) loadPage:(id<HEViewable>)page {
 
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"click" object:nil];
-
-    for (UIView * view in self.view.subviews) {
-        [view removeFromSuperview];
-    }    
-    
-    // The background
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    
     page.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
     page.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:page.view];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onClick:) name:@"click" object:nil];    
-    
 }
 
 - (void) onClick:(NSNotification*)note {
 
-    NSLog(@"ON CLICK %@", [[note userInfo] objectForKey:@"url"]);
-        
-    if ([note.object conformsToProtocol:@protocol(HEViewable)]) {
-        if ([[(id<HEViewable>)note.object view] isDescendantOfView:self.view]) {
-            NSString * page = [[note userInfo] objectForKey:@"url"];
-            [self loadPageFromFile:page];            
-        }
-    }
-    
+//    if ([note.object conformsToProtocol:@protocol(HEViewable)]) {
+//        if ([[(id<HEViewable>)note.object view] isDescendantOfView:self.view]) {
+//            NSString * page = [[note userInfo] objectForKey:@"url"];
+//            [self loadPageFromFile:page];            
+//        }
+//    }
+//    
 }
 
 #pragma mark - View lifecycle

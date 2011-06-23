@@ -7,6 +7,7 @@
 //
 
 #import "HEContainer.h"
+#import "HEViewController.h"
 
 @interface HEContainer ()
 @property (nonatomic, retain) UIView * view;
@@ -14,12 +15,6 @@
 
 @implementation HEContainer
 @synthesize view;
-
-- (id) init {
-    if ((self = [super init])) {
-    }
-    return self;
-}
 
 - (void) dealloc {
     [view release];
@@ -29,6 +24,15 @@
 - (void) didInitialize {
     self.view = [UIView new];
     [super didInitialize];
+}
+
+- (UIViewController*) viewController {
+    
+    // Generate dynamically, because we don't always need it. 
+
+    HEViewController * viewController = [[HEViewController new] autorelease]; 
+    [viewController loadPage:self];
+    return viewController;
 }
 
 @end

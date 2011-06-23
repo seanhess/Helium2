@@ -8,6 +8,8 @@
 
 #import "HeliumDemoAppDelegate.h"
 #import "HEViewController.h"
+#import "HEViewControllable.h"
+#import "HEParser.h"
 
 @implementation HeliumDemoAppDelegate
 
@@ -15,13 +17,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    HEViewController * rootViewController = [[HEViewController new] autorelease];
-    [rootViewController loadPageFromFile:@"containers.hml"];
+    // Ok, I need to let it parse, then have SOMETHING create me a thang
+    // .viewController? Right? 
+    
+    NSString * file = @"containers.hml";
+    NSString * extension = [file pathExtension];
+    NSString * basename = [file stringByDeletingPathExtension];
+    NSString * path = [[NSBundle mainBundle] pathForResource:basename ofType:extension];
+    NSData * data = [NSData dataWithContentsOfFile:path];
+    
+    id<HEViewControllable> page = (id<HEViewControllable>)[HEParser parseData:data];
+    
+    UIViewController * viewController = page.viewController;
     
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self.window addSubview:rootViewController.view];
-    self.window.rootViewController = rootViewController;
+    [self.window addSubview:viewController.view];
+    self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
     return YES;
 }

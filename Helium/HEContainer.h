@@ -7,7 +7,8 @@
 //
 
 #import "HEView.h"
+#import "HEViewControllable.h"
 
-@interface HEContainer : HEView
+@interface HEContainer : HEView <HEViewControllable>
 
 @end

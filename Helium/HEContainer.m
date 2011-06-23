@@ -22,7 +22,7 @@
 }
 
 - (void) didInitialize {
-    self.view = [UIView new];
+    self.view = [[UIView new] autorelease];
     [super didInitialize];
 }
 

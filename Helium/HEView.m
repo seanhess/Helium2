@@ -11,28 +11,23 @@
 #import "UIColor+Hex.h"
 
 @interface HEView ()
+@property (nonatomic, assign) BOOL needsFrameCleanup;
 @end
 
 @implementation HEView
 @synthesize left, right, top, bottom, width, height;
 @synthesize click;
 @synthesize background;
-@synthesize tap;
-
-- (id) init {
-    if ((self = [super init])) {
-        self.children = [NSMutableArray array];
-    }
-    return self;
-}
+@synthesize tap, needsFrameCleanup;
 
 - (void) dealloc {
 
     // well, yeah, of course these things don't stick around
     // We don't want them to (unless we want them to)
     NSLog(@"DEALLOC HEContainer");
-
-    [self.view removeGestureRecognizer:self.tap];    
+    
+    if (self.needsFrameCleanup) 
+        [self.view removeObserver:self forKeyPath:@"frame"];
 
     [left release];
     [right release];
@@ -45,6 +40,7 @@
     [click release];
     [background release];
     
+    [self.view removeGestureRecognizer:self.tap];     
     [tap release];
     
     [super dealloc];
@@ -65,8 +61,8 @@
     
     // You have to set the autoresizing mask to get the frame to fire when the superview's frame changes
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth;    
-    [self.view addObserver:self forKeyPath:@"frame" options:0 context:nil];  
-    
+    [self.view addObserver:self forKeyPath:@"frame" options:0 context:nil]; 
+    self.needsFrameCleanup = YES;
     
     // Add children
     for (NSObject * child in self.children) {
@@ -81,15 +77,6 @@
 
     
     
-    
-    
-    // BUG: TOOD: HACK: Need to change this so it somehow attaches itself to the view
-    // because it needs to observe it, but it doesn't belong to the view at all
-    // I'd have to create an "observers" or a "behaviors" to an object, or something. 
-    
-    // Needs to happen for both taps, and for observing layouts
-    
-    [self retain];    
 }
 
 - (void) onTap:(UIGestureRecognizer*)tap {
@@ -100,6 +87,7 @@
 
     if (keyPath == @"frame" && self.view.superview) {
         [self.view removeObserver:self forKeyPath:@"frame"];    
+        self.needsFrameCleanup = NO;
         [self layout];
     }
 }

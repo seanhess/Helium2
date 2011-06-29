@@ -11,6 +11,8 @@
 
 @interface HEViewController : UIViewController
 
+@property (nonatomic, retain) id<HEViewable>page;
+
 // Re-loads the page and displays it
 - (void) loadPage:(id<HEViewable>)page;
 

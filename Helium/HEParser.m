@@ -36,7 +36,7 @@
 }
 
 + (id<HEObject>) parseElement:(TBXMLElement *)element {
-    NSLog(@"<%@>", [TBXML elementName:element]);
+    // NSLog(@"<%@>", [TBXML elementName:element]);
     
     id<HEObject> object = nil;
 

@@ -13,6 +13,7 @@
 #import "HELoader.h"
 
 @implementation HEViewController
+@synthesize page;
 
 - (id) init {
     if ((self = [super init])) {
@@ -22,6 +23,7 @@
 }
 
 - (void) dealloc {
+    [page release];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"click" object:nil];
     [super dealloc];
 }
@@ -35,15 +37,21 @@
 }
 
 - (void) loadPageFromString:(NSString*)string {
-    id<HEObject> page = [HEParser parseString:string];
-    [self loadPage:(id<HEViewable>)page];    
+    id<HEObject> newPage = [HEParser parseString:string];
+    [self loadPage:(id<HEViewable>)newPage];    
 }
 
-- (void) loadPage:(id<HEViewable>)page {
+- (void) loadPage:(id<HEViewable>)newPage {
 
-    page.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
-    page.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.view addSubview:page.view];
+    self.page = newPage;
+
+    for (UIView * view in self.view.subviews) {
+        [view removeFromSuperview];
+    }
+
+    self.page.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+    self.page.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.view addSubview:self.page.view];
 
 }
 
@@ -52,8 +60,8 @@
     if ([note.object conformsToProtocol:@protocol(HEViewable)]) {
         if ([[(id<HEViewable>)note.object view] isDescendantOfView:self.view]) {
             NSString * url = [[note userInfo] objectForKey:@"url"];
-            id<HEViewable> page = (id<HEViewable>)[HELoader loadPageFromFile:url];
-            [self loadPage:page];
+            id<HEViewable> newPage = (id<HEViewable>)[HELoader loadPageFromFile:url];
+            [self loadPage:newPage];
         }
     }
     

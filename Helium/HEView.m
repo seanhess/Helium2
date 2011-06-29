@@ -11,24 +11,16 @@
 #import "UIColor+Hex.h"
 
 @interface HEView ()
-@property (nonatomic, assign) BOOL needsFrameCleanup;
 @end
 
 @implementation HEView
 @synthesize left, right, top, bottom, width, height;
 @synthesize click;
 @synthesize background;
-@synthesize tap, needsFrameCleanup;
+@synthesize tap;
 
 - (void) dealloc {
-
-    // well, yeah, of course these things don't stick around
-    // We don't want them to (unless we want them to)
-    NSLog(@"DEALLOC HEContainer");
     
-    if (self.needsFrameCleanup) 
-        [self.view removeObserver:self forKeyPath:@"frame"];
-
     [left release];
     [right release];
     [top release];
@@ -55,14 +47,14 @@
     if (self.click) {
         self.view.userInteractionEnabled = YES;
         // Listen for clicks
+        
         self.tap = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap:)] autorelease];
-        [self.view addGestureRecognizer:self.tap];    
+        [self.view addGestureRecognizer:self.tap];
     }
     
     // You have to set the autoresizing mask to get the frame to fire when the superview's frame changes
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth;    
     [self.view addObserver:self forKeyPath:@"frame" options:0 context:nil]; 
-    self.needsFrameCleanup = YES;
     
     // Add children
     for (NSObject * child in self.children) {
@@ -83,10 +75,11 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 
-    if (keyPath == @"frame" && self.view.superview) {
+    if (keyPath == @"frame") {
         [self.view removeObserver:self forKeyPath:@"frame"];    
-        self.needsFrameCleanup = NO;
-        [self layout];
+
+        if (self.view.superview)
+            [self layout];
     }
 }
 

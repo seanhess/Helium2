@@ -29,6 +29,7 @@
 - (UIViewController*) viewController {
     
     // Generate dynamically, because we don't always need it. 
+    // Don't retain the view controller, either, because it retains this page
 
     HEViewController * viewController = [[HEViewController new] autorelease]; 
     [viewController loadPage:self];

@@ -26,7 +26,7 @@
 }
 
 - (UIViewController*) viewController {
-    UINavigationController * controller = [[[UINavigationController alloc] initWithRootViewController:self.root.viewController] autorelease];
+    UINavigationController * controller = [[[UINavigationController alloc] initWithRootViewController:self.first.viewController] autorelease];
     
     if (self.title)
         controller.title = self.title;    

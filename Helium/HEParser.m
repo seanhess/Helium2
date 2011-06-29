@@ -10,6 +10,7 @@
 #import "HEContainer.h"
 #import "HELoader.h"
 #import "TBXML.h"
+#import "HEAdapter.h"
 
 
 
@@ -23,6 +24,7 @@
 + (NSMutableArray*) parseChildren:(TBXMLElement*)element;
 + (NSMutableDictionary*) parseAttributes:(TBXMLElement*)element;
 
++ (id<HEObject>)objectForElementName:(NSString*)nodeName;
 
 + (void)object:(id<HEObject>)object setAttributes:(NSDictionary*)attributes;
 + (void)object:(id<HEObject>)object setChildren:(NSArray*)children;
@@ -52,10 +54,7 @@
 
 + (id<HEObject>) parseElement:(TBXMLElement *)element {
 
-    // TODO: change to support other namespaces
-    NSString * className = [NSString stringWithFormat:@"HE%@", [TBXML elementName:element]];
-    Class class = NSClassFromString(className);
-    id<HEObject> object = [[class new] autorelease];    
+    id<HEObject>object = [self objectForElementName:[TBXML elementName:element]];
  
     // attaches to it
     NSMutableDictionary * attributes = [self parseAttributes:element];
@@ -76,7 +75,7 @@
         NSMutableArray * sourceChildren = [self parseChildren:sourceElement];
         
         // overwrites old values
-        [attributes removeObjectForKey:@"source"];        
+        [attributes removeObjectForKey:@"load"];        
         [sourceAttributes addEntriesFromDictionary:attributes];
         [sourceChildren addObjectsFromArray:children];
         
@@ -123,6 +122,41 @@
 
 
 
+
++ (id<HEObject>)objectForElementName:(NSString*)nodeName {
+
+    // see if a built-in HE object exists with that name, otherwise, 
+    // try loading it as an HEObject, and if it fails, then load using 
+    // an adapter. 
+    
+    // Ignore namespacing, since iOS requires you to namespace your classes
+    // anyway. 
+
+    NSString * className = [NSString stringWithFormat:@"HE%@", nodeName];
+    Class class = NSClassFromString(className);
+    id<HEObject> object = nil;
+    
+    // Try a class with a non-HE prefix
+    if (!class) 
+        class = NSClassFromString(nodeName);
+    
+    // If it's already an HEObject, just go for it
+    if ([class conformsToProtocol:@protocol(HEObject)])
+        object = [[class new] autorelease];   
+        
+    // Otherwise, use an adapter
+    else {
+        NSLog(@"USing adapter for %@", NSStringFromClass(class));
+        HEAdapter * adapter = [[HEAdapter new] autorelease];
+        adapter.type = class;
+        object = adapter;                
+    }
+    
+    return object;
+}
+
+
+
 + (void)object:(id<HEObject>)object setAttributes:(NSDictionary*)attributes {
     for (NSString * name in attributes) {
         @try {
@@ -149,29 +183,8 @@
 }
 
 
-/*
-
-        // Will throw an error for an undefined property
-        // automatically converts to int for us! hooray!
-        
-        // [obj setValuesForKeysWithDictionary:dict];
-        
-        // Class class = [object class];
-        // objc_property_t property = class_getProperty(class, [attributeName cStringUsingEncoding:NSUTF8StringEncoding]);
-        
-        // if (property) {
-        //    const char * name = property_getName(property);
-        //    const char * infoChars = property_getAttributes(property);
-        //    NSLog(@" name=%s info=%s", name, info);
-        // }
-
-        // if([object respondsToSelector:setter]) {
-        //    [object performSelector:setter withObject:attributeValue];
-        // }
-        
 
 
-*/
 
 
 

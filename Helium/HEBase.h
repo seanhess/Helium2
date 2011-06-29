@@ -13,6 +13,6 @@
 @interface HEBase : NSObject <HEObject>
 
 // utility methods
-- (id<HEViewControllable>)root;
+- (id<HEViewControllable>)first;
 
 @end

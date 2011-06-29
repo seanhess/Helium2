@@ -20,7 +20,7 @@
 
 }
 
-- (id<HEViewControllable>)root {
+- (id<HEViewControllable>)first {
     
     // returns the view controllable item
     

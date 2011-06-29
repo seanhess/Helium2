@@ -1,21 +1,44 @@
 <Tabs>
     <Container background="#AA0000" title="Red" click="henry.hml">
         <Container background="#FFFFFF" left="20" right="20" top="20" bottom="20"/>
+        <ExampleView/>
     </Container>
 
-    <Container load="woot.hml" title="Woot"/>
-    
-    <!-- Apparently you can nest tab bar controllers. Weird -->
+    <!-- Apparently you can nest tab bar controllers. Weird 
     <Tabs title="Nest">
         <Container title="woot"/>
         <Container title="two"/>
     </Tabs>
+    -->
     
-    <Scroll load="scroll.hml"/>
+    <!-- Load a Custom UIViewController -->
+    <!-- Can I be fancy and detect what it is? -->
+    <!-- I really only need to support UIViewController and UIView subclasses -->
+    
+    <!-- I want to be able to set properties on these, as well -->
+    
+    <!-- Can I make the attributes dynamic?
+        background="" - means to attempt to set a backgroundColor property on whatever it is
+        
+        there can be a default handler, that just passes it through to the main object
+        
+        self.view is a misnomer. There is always an underlying object, right? We can make that assumption. So, the default attribute handler just passes it through. 
+        
+        so, left/right/top/bottom would ... would what? 
+        
+        a single handler can catch several of the attributes and do something cool?
+        
+        That's... really cool. I like the idea of a pass-through. Right? 
+    -->
+        
+    <ExampleViewController />
+    <ExampleViewController nibName="ExampleViewController2"/>    
+    
+    <Scroll load="scroll.hml" title="Scroll2" icon="Star-Favorites.png"/>
     
     <Navigation>
         <Container background="#FFFFFF" title="Nav" icon="Star-Favorites.png">
-            <Button text="Go" click="containers.hml"/>
+            <Button text="Go" click="containers.hml" height="100" left="10" top="10" right="10"/>
         </Container>
     </Navigation>
 </Tabs>

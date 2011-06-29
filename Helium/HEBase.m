@@ -11,13 +11,13 @@
 @implementation HEBase
 @synthesize children;
 
-- (NSMutableArray*) children {
-    if (!children) self.children = [NSMutableArray array];
-    return children;
+- (void) dealloc {
+    [children release];
+    [super dealloc];
 }
 
 - (void) didInitialize {
-    
+
 }
 
 - (id<HEViewControllable>)root {
@@ -33,13 +33,5 @@
     return nil;
 }
 
-- (void) addChild:(id<HEObject>)child {
-    [self.children addObject:child];
-}
-
-- (void) dealloc {
-    [children release];
-    [super dealloc];
-}
 
 @end

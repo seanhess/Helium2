@@ -11,6 +11,7 @@
 
 @interface HELoader : NSObject
 
++ (NSData*) dataFromFile:(NSString*)file;
 + (id<HEObject>) loadPageFromFile:(NSString*)file;
 
 @end

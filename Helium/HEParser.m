@@ -7,11 +7,9 @@
 //
 
 #import "HEParser.h"
-#import "TBXML.h"
 #import "HEContainer.h"
-
-
-
+#import "HELoader.h"
+#import "TBXML.h"
 
 
 
@@ -19,16 +17,26 @@
 
 + (id<HEViewable>) parseXML:(TBXML*)xml;
 
-+ (id<HEObject>) parseElement:(TBXMLElement*)element;
-+ (void) parseChildren:(TBXMLElement*)element object:(id<HEObject>)object;
-+ (void) parseAttributes:(TBXMLElement*)element object:(id<HEObject>)object;
 
-+ (NSString *)propertyType:(id)object attributeName:(NSString*)name;
++ (TBXMLElement*) elementForData:(NSData*)data;
++ (id<HEObject>) parseElement:(TBXMLElement*)element;
++ (NSMutableArray*) parseChildren:(TBXMLElement*)element;
++ (NSMutableDictionary*) parseAttributes:(TBXMLElement*)element;
+
+
++ (void)object:(id<HEObject>)object setAttributes:(NSDictionary*)attributes;
++ (void)object:(id<HEObject>)object setChildren:(NSArray*)children;
+
++ (NSString *)propertyType:(Class)class attributeName:(NSString*)name;
 @end
 
 
 
 @implementation HEParser
+
++ (TBXMLElement*) elementForData:(NSData*)data {
+    return [[TBXML tbxmlWithXMLData:data] rootXMLElement];
+}
 
 + (id<HEObject>) parseData:(NSData*)data {
     return [self parseXML:[TBXML tbxmlWithXMLData:data]];
@@ -43,61 +51,111 @@
 }
 
 + (id<HEObject>) parseElement:(TBXMLElement *)element {
-    // NSLog(@"<%@>", [TBXML elementName:element]);
-    
-    id<HEObject> object = nil;
 
     // TODO: change to support other namespaces
     NSString * className = [NSString stringWithFormat:@"HE%@", [TBXML elementName:element]];
     Class class = NSClassFromString(className);
-    object = [[class new] autorelease];
+    id<HEObject> object = [[class new] autorelease];    
+ 
+    // attaches to it
+    NSMutableDictionary * attributes = [self parseAttributes:element];
     
     // attaches to it
-    [self parseAttributes:element object:object];
+    NSArray * children = [self parseChildren:element];
     
-    // attaches to it
-    [self parseChildren:element object:object];
+    // Check Source
+    NSString * source = [attributes objectForKey:@"source"];
+    if (source && [source rangeOfString:@"http://"].location == NSNotFound) {
+        
+        NSLog(@"LOADING USING SOURCE %@", source);
+        // load the object remotely
+        NSData * data = [HELoader dataFromFile:source];
+        TBXMLElement * sourceElement = [self elementForData:data];
+        
+        NSMutableDictionary * sourceAttributes = [self parseAttributes:sourceElement];
+        NSMutableArray * sourceChildren = [self parseChildren:sourceElement];
+        
+        // overwrites old values
+        [attributes removeObjectForKey:@"source"];        
+        [sourceAttributes addEntriesFromDictionary:attributes];
+        [sourceChildren addObjectsFromArray:children];
+        
+        attributes = sourceAttributes;
+        children = sourceChildren;
+    }
     
-    // Tell it we are done
+    
+    
+    
+    [self object:object setAttributes:attributes];
+    [self object:object setChildren:children];    
+    
     [object didInitialize];
-    
+
     return object;
 }
 
-+ (void) parseChildren:(TBXMLElement *)element object:(id<HEParent>)object {
++ (NSMutableArray*) parseChildren:(TBXMLElement *)element {
+
+    NSMutableArray * children = [NSMutableArray array];
     
     TBXMLElement * child = element->firstChild;
 
     while(child) {
         id<HEObject> childObject = [self parseElement:child];
-        [object addChild:childObject];
+        [children addObject:childObject];
         child = child->nextSibling;
     }        
+    
+    return children;
 }
 
-+ (void) parseAttributes:(TBXMLElement *)element object:(id<HEObject>)object { 
++ (NSMutableDictionary*) parseAttributes:(TBXMLElement *)element { 
     TBXMLAttribute * attribute = element->firstAttribute;
+    NSMutableDictionary * values = [NSMutableDictionary dictionary];
     
     while(attribute) {
         NSString * attributeName = [TBXML attributeName:attribute];
         id attributeValue = [TBXML attributeValue:attribute];
-        
-        // Will throw an error for an undefined property
-        // automatically converts to int for us! hooray!
+        [values setObject:attributeValue forKey:attributeName];        
+        attribute = attribute->next;        
+    }  
+
+    return values;      
+}
+
+
+
++ (void)object:(id<HEObject>)object setAttributes:(NSDictionary*)attributes {
+    for (NSString * name in attributes) {
         @try {
+
+            id value = [attributes objectForKey:name];
             
-            NSString * type = [self propertyType:object attributeName:attributeName];
+            NSString * type = [self propertyType:[object class] attributeName:name];
             
             if ([type isEqualToString:@"NSNumber"]) {
                 // Only accept integers
-                attributeValue = [NSNumber numberWithInt:[attributeValue intValue]];
+                value = [NSNumber numberWithInt:[value intValue]];
             }
             
-            [object setValue:attributeValue forKey:attributeName];
+            [object setValue:value forKey:name];
         }
         @catch (NSException * e) {
-            NSLog(@"NO PROPERTY %@ on %@", attributeName, object);
-        }
+            NSLog(@"NO PROPERTY %@ on %@", name, NSStringFromClass([object class]));
+        }        
+    }
+}
+
++ (void)object:(id<HEObject>)object setChildren:(NSArray*)children {
+    object.children = children;
+}
+
+
+/*
+
+        // Will throw an error for an undefined property
+        // automatically converts to int for us! hooray!
         
         // [obj setValuesForKeysWithDictionary:dict];
         
@@ -114,16 +172,19 @@
         //    [object performSelector:setter withObject:attributeValue];
         // }
         
-        attribute = attribute->next;        
-    }        
-}
+
+
+*/
+
 
 
 // taken from http://stackoverflow.com/questions/754824/get-an-object-attributes-list-in-objective-c
 // pulls out the property type
 
-+ (NSString *)propertyType:(id)object attributeName:(NSString *)name {
-    objc_property_t property = class_getProperty([object class], [name cStringUsingEncoding:NSUTF8StringEncoding]);
++ (NSString *)propertyType:(Class)class attributeName:(NSString *)name {
+    objc_property_t property = class_getProperty(class, [name cStringUsingEncoding:NSUTF8StringEncoding]);
+    
+    if (!property) return nil;
     
     const char *attributes = property_getAttributes(property);
     char buffer[1 + strlen(attributes)];

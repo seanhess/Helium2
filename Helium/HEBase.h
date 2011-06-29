@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HEParent.h"
+#import "HEObject.h"
 #import "HEViewControllable.h"
 
-@interface HEBase : NSObject <HEParent>
+@interface HEBase : NSObject <HEObject>
 
 // utility methods
 - (id<HEViewControllable>)root;

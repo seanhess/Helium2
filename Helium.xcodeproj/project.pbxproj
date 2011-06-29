@@ -20,7 +20,6 @@
 		785E641213BB96BA00FB3C03 /* HEScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E641013BB96BA00FB3C03 /* HEScroll.m */; };
 		787183F213A8693400F30570 /* NSDataAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 787183EB13A8693400F30570 /* NSDataAdditions.h */; };
 		787183F313A8693400F30570 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 787183EC13A8693400F30570 /* NSDataAdditions.m */; };
-		787183F413A8693400F30570 /* TBXML-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 787183ED13A8693400F30570 /* TBXML-Prefix.pch */; };
 		787183F513A8693400F30570 /* TBXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 787183EE13A8693400F30570 /* TBXML.h */; };
 		787183F613A8693400F30570 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 787183EF13A8693400F30570 /* TBXML.m */; };
 		787183F713A8693400F30570 /* UIColor+Hex.h in Headers */ = {isa = PBXBuildFile; fileRef = 787183F013A8693400F30570 /* UIColor+Hex.h */; };
@@ -52,14 +51,13 @@
 		78D8F0A713A063E6003750D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78D8F0A513A063E6003750D2 /* InfoPlist.strings */; };
 		78D8F0A913A063E6003750D2 /* HeliumTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 78D8F0A813A063E6003750D2 /* HeliumTests.h */; };
 		78D8F0AB13A063E6003750D2 /* HeliumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D8F0AA13A063E6003750D2 /* HeliumTests.m */; };
-		78E989B113A06847005A72D4 /* HEContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E989AF13A06847005A72D4 /* HEContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78E989B113A06847005A72D4 /* HEContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E989AF13A06847005A72D4 /* HEContainer.h */; settings = {ATTRIBUTES = (); }; };
 		78E989B213A06847005A72D4 /* HEContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E989B013A06847005A72D4 /* HEContainer.m */; };
 		78E989BF13A06A19005A72D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E989BE13A06A19005A72D4 /* UIKit.framework */; };
 		78E989C313A06A61005A72D4 /* HEViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E989C113A06A61005A72D4 /* HEViewController.h */; };
 		78E989C413A06A61005A72D4 /* HEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E989C213A06A61005A72D4 /* HEViewController.m */; };
 		78E989D113A139A8005A72D4 /* HEParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E989CF13A139A8005A72D4 /* HEParser.h */; };
 		78E989D213A139A8005A72D4 /* HEParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E989D013A139A8005A72D4 /* HEParser.m */; };
-		78E98A1E13A6AE67005A72D4 /* HEParent.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E98A1D13A6AE67005A72D4 /* HEParent.h */; };
 		78E98A2113A6AF1E005A72D4 /* HEObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E98A2013A6AF1E005A72D4 /* HEObject.h */; };
 		78E98A2313A6B3AD005A72D4 /* HEViewable.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E98A2213A6B3AC005A72D4 /* HEViewable.h */; };
 /* End PBXBuildFile section */
@@ -88,7 +86,6 @@
 		785E641013BB96BA00FB3C03 /* HEScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEScroll.m; sourceTree = "<group>"; };
 		787183EB13A8693400F30570 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
 		787183EC13A8693400F30570 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
-		787183ED13A8693400F30570 /* TBXML-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML-Prefix.pch"; sourceTree = "<group>"; };
 		787183EE13A8693400F30570 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
 		787183EF13A8693400F30570 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
 		787183F013A8693400F30570 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
@@ -129,7 +126,6 @@
 		78E989C213A06A61005A72D4 /* HEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEViewController.m; sourceTree = "<group>"; };
 		78E989CF13A139A8005A72D4 /* HEParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEParser.h; sourceTree = "<group>"; };
 		78E989D013A139A8005A72D4 /* HEParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEParser.m; sourceTree = "<group>"; };
-		78E98A1D13A6AE67005A72D4 /* HEParent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEParent.h; sourceTree = "<group>"; };
 		78E98A2013A6AF1E005A72D4 /* HEObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEObject.h; sourceTree = "<group>"; };
 		78E98A2213A6B3AC005A72D4 /* HEViewable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEViewable.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,7 +171,6 @@
 			children = (
 				787183EB13A8693400F30570 /* NSDataAdditions.h */,
 				787183EC13A8693400F30570 /* NSDataAdditions.m */,
-				787183ED13A8693400F30570 /* TBXML-Prefix.pch */,
 				787183EE13A8693400F30570 /* TBXML.h */,
 				787183EF13A8693400F30570 /* TBXML.m */,
 			);
@@ -238,7 +233,6 @@
 				78E989CF13A139A8005A72D4 /* HEParser.h */,
 				78E989D013A139A8005A72D4 /* HEParser.m */,
 				78E98A2013A6AF1E005A72D4 /* HEObject.h */,
-				78E98A1D13A6AE67005A72D4 /* HEParent.h */,
 				7837178013B3ECE900C0600C /* HEBase.h */,
 				7837178113B3ECEA00C0600C /* HEBase.m */,
 				78E98A2213A6B3AC005A72D4 /* HEViewable.h */,
@@ -294,15 +288,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78E989B113A06847005A72D4 /* HEContainer.h in Headers */,
 				78E989C313A06A61005A72D4 /* HEViewController.h in Headers */,
 				78E989D113A139A8005A72D4 /* HEParser.h in Headers */,
-				78E98A1E13A6AE67005A72D4 /* HEParent.h in Headers */,
 				78E98A2113A6AF1E005A72D4 /* HEObject.h in Headers */,
 				78E98A2313A6B3AD005A72D4 /* HEViewable.h in Headers */,
 				787183F213A8693400F30570 /* NSDataAdditions.h in Headers */,
-				787183F413A8693400F30570 /* TBXML-Prefix.pch in Headers */,
 				787183F513A8693400F30570 /* TBXML.h in Headers */,
+				78E989B113A06847005A72D4 /* HEContainer.h in Headers */,
 				787183F713A8693400F30570 /* UIColor+Hex.h in Headers */,
 				78BBDCC313A990960038C805 /* HEImage.h in Headers */,
 				78BBDCCA13A9AEF80038C805 /* HELabel.h in Headers */,

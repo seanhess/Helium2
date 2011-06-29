@@ -1,7 +1,28 @@
 <Tabs>
-    <Container background="#AA0000" title="Red"/>
+    <Container background="#AA0000" title="Red" click="henry.hml"/>
     <Container background="#00AA00" title="Green"/>    
-    <Container background="#0000AA" title="Blue"/>        
+    
+    <!-- Apparently you can nest tab bar controllers. Weird -->
+    <Tabs title="Nest">
+        <Container title="woot"/>
+        <Container title="two"/>
+    </Tabs>
+    
+    <Container title="Scroll">
+        <Scroll contentHeight="1000" background="#00FF00">
+            <Container background="#FF0000" width="100" height="80"/>                                                    
+            <Container background="#FF0000" width="100" height="80" top="100"/>
+            <Container background="#FF0000" width="100" height="80" top="200"/>
+            <Container background="#FF0000" width="100" height="80" top="300"/>
+            <Container background="#FF0000" width="100" height="80" top="400"/>                 
+            <Container background="#FF0000" width="100" height="80" top="500"/>
+            <Container background="#FF0000" width="100" height="80" top="600"/>
+            <Container background="#FF0000" width="100" height="80" top="700"/>
+            <Container background="#FF0000" width="100" height="80" top="800"/>
+            <Container background="#FF0000" width="100" height="80" top="900"/>
+        </Scroll>
+    </Container>
+    
     <Navigation>
         <Container background="#FFFFFF" title="Nav" icon="Star-Favorites.png">
             <Button text="Go" click="containers.hml"/>

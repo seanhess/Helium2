@@ -1,5 +1,5 @@
 <Tabs>
-    <Container background="#AA0000" title="Red" click="henry.hml">
+    <Container background="#AA0000" title="Red" click="bundle://henry.hml">
         <Container background="#FFFFFF" left="20" right="20" top="20" bottom="20"/>
         <ExampleView/>
     </Container>
@@ -36,11 +36,11 @@
     -->
         
     
-    <Scroll load="scroll.hml" title="Scroll2" icon="Star-Favorites.png"/>
+    <Scroll load="bundle://scroll.hml" title="Scroll2" icon="Star-Favorites.png"/>
     
     <Navigation>
         <Container background="#FFFFFF" title="Nav" icon="Star-Favorites.png">      
-            <Button text="Go" click="containers.hml" height="100" left="10" top="10" right="10"/>
+            <Button text="Go" click="bundle://containers.hml" height="100" left="10" top="10" right="10"/>
         </Container>
     </Navigation>
     

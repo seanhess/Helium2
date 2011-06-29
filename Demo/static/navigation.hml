@@ -1,6 +1,6 @@
 <Navigation>
     <Container background="#0000FF" title="Navigation">
-        <Button text="containers.hml" click="containers.hml" left="10" right="10" height="30" top="10"/>
-        <Button text="navigation (will crash)" click="navigation.hml" left="10" right="10" height="30" top="50"/>        
+        <Button text="containers.hml" click="bundle://containers.hml" left="10" right="10" height="30" top="10"/>
+        <Button text="navigation (will crash)" click="bundle://navigation.hml" left="10" right="10" height="30" top="50"/>        
     </Container>
 </Navigation>

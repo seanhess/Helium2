@@ -42,7 +42,7 @@
     
     // demonstrate that you can jump back to helium. 
     
-    self.page = (id<HEViewable>)[HELoader loadPageFromFile:@"containers.hml"];
+    self.page = (id<HEViewable>)[HELoader loadPage:@"bundle://containers.hml"];
     self.page.view.frame = CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 100);
     [self.view addSubview:self.page.view];
 }

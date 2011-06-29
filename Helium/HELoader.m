@@ -11,6 +11,11 @@
 
 static NSString * baseUrl = nil;
 
+@interface HELoader ()
++ (id<HEObject>) loadPageFromFile:(NSString*)file;
++ (id<HEObject>) loadPageFromURL:(NSString*)url;
+@end
+
 @implementation HELoader
 
 + (void) initializeWithBaseURL:(NSString*)url {
@@ -36,9 +41,12 @@ static NSString * baseUrl = nil;
 }
 
 + (NSData*) data:(NSString*)fileOrUrl {
-//    if ([fileOrUrl rangeOfString:@"http://"].location == NSNotFound) {
-//        return [self dataFromFile:fileOrUrl];
-//    }
+    
+    NSRange bundleSchemeRange = [fileOrUrl rangeOfString:@"bundle://"];
+    if (bundleSchemeRange.location != NSNotFound) {
+        fileOrUrl = [fileOrUrl stringByReplacingCharactersInRange:bundleSchemeRange withString:@""];
+        return [self dataFromFile:fileOrUrl];
+    }
     
     return [self dataFromURL:fileOrUrl];
 }

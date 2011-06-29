@@ -23,7 +23,8 @@
     // Ok, I need to let it parse, then have SOMETHING create me a thang
     // .viewController? Right? 
     
-    id<HEViewControllable> page = (id<HEViewControllable>)[HELoader loadPageFromURL:@"/main.hml"];
+    //id<HEViewControllable> page = (id<HEViewControllable>)[HELoader loadPage:@"/main.hml"];    
+    id<HEViewControllable> page = (id<HEViewControllable>)[HELoader loadPage:@"bundle://tabs.hml"];        
     UIViewController * viewController = page.viewController;
     
     // Override point for customization after application launch.

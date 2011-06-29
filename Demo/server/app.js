@@ -17,7 +17,7 @@ app.get("*", function(req, res, next) {
 })
 
 app.get('/main', function(req, res) {
-    res.render("main.hml")
+    res.render("main.hml", {message:"woot"})
 })
 
 app.listen(3021)

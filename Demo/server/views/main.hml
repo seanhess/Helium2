@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Navigation>
     <Container title="Example" background="#333333">
-        <Label text="This is an example"/>
+        <Label text="Message: {{message}}" height="30"/>
     </Container>
 </Navigation>

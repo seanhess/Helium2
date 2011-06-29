@@ -11,7 +11,11 @@
 
 @interface HELoader : NSObject
 
-+ (NSData*) dataFromFile:(NSString*)file;
 + (id<HEObject>) loadPageFromFile:(NSString*)file;
++ (id<HEObject>) loadPageFromURL:(NSString*)url;
++ (id<HEObject>) loadPageFromData:(NSData*)data;
+
++ (NSData*) dataFromFile:(NSString*)file;
++ (NSData*) dataFromURL:(NSString*)url;
 
 @end

@@ -12,7 +12,14 @@
 @implementation HELoader
 
 + (id<HEObject>) loadPageFromFile:(NSString*)file {
-    NSData * data = [self dataFromFile:file];
+    return [self loadPageFromData:[self dataFromFile:file]];
+}
+
++ (id<HEObject>) loadPageFromURL:(NSString*)url {
+    return [self loadPageFromData:[self dataFromURL:url]];    
+}
+
++ (id<HEObject>) loadPageFromData:(NSData *)data {
     id<HEViewControllable> page = (id<HEViewControllable>)[HEParser parseData:data];
     return page;
 }
@@ -23,6 +30,13 @@
     NSString * path = [[NSBundle mainBundle] pathForResource:basename ofType:extension];
     NSData * data = [NSData dataWithContentsOfFile:path];
     return data;
+}
+
++ (NSData*) dataFromURL:(NSString*)url {
+
+    // I need to support relative urls, but for now, global
+    NSURL * nativeUrl = [NSURL URLWithString:url];
+    return [NSData dataWithContentsOfURL:nativeUrl];
 }
 
 @end

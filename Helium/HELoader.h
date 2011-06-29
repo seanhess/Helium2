@@ -11,6 +11,8 @@
 
 @interface HELoader : NSObject
 
++ (void) initializeWithBaseURL:(NSString*)url;
+
 + (id<HEObject>) loadPageFromFile:(NSString*)file;
 + (id<HEObject>) loadPageFromURL:(NSString*)url;
 + (id<HEObject>) loadPage:(NSString*)fileOrUrl;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Navigation>
     <Container title="Example" background="#333333">
-        <Button text="Message: {{message}}" height="30" click="http://localhost:3021/two.hml"/>
+        <Button text="Message: {{message}}" height="30" click="/two.hml"/>
     </Container>
 </Navigation>

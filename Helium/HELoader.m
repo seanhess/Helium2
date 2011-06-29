@@ -9,7 +9,13 @@
 #import "HELoader.h"
 #import "HEParser.h"
 
+static NSString * baseUrl = nil;
+
 @implementation HELoader
+
++ (void) initializeWithBaseURL:(NSString*)url {
+    baseUrl = [url copy];
+}
 
 + (id<HEObject>) loadPageFromFile:(NSString*)file {
     return [self loadPageFromData:[self dataFromFile:file]];
@@ -30,9 +36,9 @@
 }
 
 + (NSData*) data:(NSString*)fileOrUrl {
-    if ([fileOrUrl rangeOfString:@"http://"].location == NSNotFound) {
-        return [self dataFromFile:fileOrUrl];
-    }
+//    if ([fileOrUrl rangeOfString:@"http://"].location == NSNotFound) {
+//        return [self dataFromFile:fileOrUrl];
+//    }
     
     return [self dataFromURL:fileOrUrl];
 }
@@ -46,6 +52,10 @@
 }
 
 + (NSData*) dataFromURL:(NSString*)url {
+
+    if (baseUrl) {
+        url = [baseUrl stringByAppendingString:url];
+    }
 
     // I need to support relative urls, but for now, global
     NSURL * nativeUrl = [NSURL URLWithString:url];

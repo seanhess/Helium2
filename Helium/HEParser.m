@@ -10,6 +10,11 @@
 #import "TBXML.h"
 #import "HEContainer.h"
 
+
+
+
+
+
 @interface HEParser ()
 
 + (id<HEViewable>) parseXML:(TBXML*)xml;
@@ -17,6 +22,8 @@
 + (id<HEObject>) parseElement:(TBXMLElement*)element;
 + (void) parseChildren:(TBXMLElement*)element object:(id<HEObject>)object;
 + (void) parseAttributes:(TBXMLElement*)element object:(id<HEObject>)object;
+
++ (NSString *)propertyType:(id)object attributeName:(NSString*)name;
 @end
 
 
@@ -78,6 +85,14 @@
         // Will throw an error for an undefined property
         // automatically converts to int for us! hooray!
         @try {
+            
+            NSString * type = [self propertyType:object attributeName:attributeName];
+            
+            if ([type isEqualToString:@"NSNumber"]) {
+                // Only accept integers
+                attributeValue = [NSNumber numberWithInt:[attributeValue intValue]];
+            }
+            
             [object setValue:attributeValue forKey:attributeName];
         }
         @catch (NSException * e) {
@@ -103,4 +118,27 @@
     }        
 }
 
+
+// taken from http://stackoverflow.com/questions/754824/get-an-object-attributes-list-in-objective-c
+// pulls out the property type
+
++ (NSString *)propertyType:(id)object attributeName:(NSString *)name {
+    objc_property_t property = class_getProperty([object class], [name cStringUsingEncoding:NSUTF8StringEncoding]);
+    
+    const char *attributes = property_getAttributes(property);
+    char buffer[1 + strlen(attributes)];
+    strcpy(buffer, attributes);
+    char *state = buffer, *attribute;
+    while ((attribute = strsep(&state, ",")) != NULL) {
+        if (attribute[0] == 'T') {
+            return [NSString stringWithCString:(const char *)[[NSData dataWithBytes:(attribute + 3) length:strlen(attribute) - 4] bytes] encoding:NSUTF8StringEncoding];
+        }
+    }
+    return nil;
+}
+
 @end
+
+
+
+

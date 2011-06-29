@@ -1,5 +1,7 @@
 <Tabs>
-    <Container background="#AA0000" title="Red" click="henry.hml"/>
+    <Container background="#AA0000" title="Red" click="henry.hml">
+        <Container background="#FFFFFF" left="20" right="20" top="20" bottom="20"/>
+    </Container>
     <Container background="#00AA00" title="Green"/>    
     
     <!-- Apparently you can nest tab bar controllers. Weird -->

@@ -1,5 +1,5 @@
 
-<Container background="#888888">
+<Container background="#888888" title="Containers">
 
     <Container top="50" left="25" right="25" bottom="50" background="#000000">
         <Image right="0" source="http://www.gstatic.com/news/img/logo/en_us/news.gif" click="woot.hml"/>

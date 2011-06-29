@@ -10,5 +10,5 @@
 #import "HEViewControllable.h"
 
 @interface HEContainer : HEView <HEViewControllable>
-
+@property (nonatomic, retain) NSString * title;
 @end

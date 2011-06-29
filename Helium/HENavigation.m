@@ -9,35 +9,28 @@
 #import "HENavigation.h"
 
 @interface HENavigation ()
-@property (nonatomic, retain) UINavigationController * navigationController;
+@property (nonatomic, assign) id<HEViewControllable> root;
 @end
 
 
 @implementation HENavigation
-@synthesize navigationController;
+@synthesize root;
 
 - (void) dealloc {
-    [navigationController release];
     [super dealloc];
 }
 
 - (void) didInitialize {
 
-    id<HEViewControllable> root = nil;
+    id<HEObject> rootObject = [self.children objectAtIndex:0];
     
-    for (NSObject * object in self.children) {
-        if ([object conformsToProtocol:@protocol(HEViewControllable)]) {
-            root = (id<HEViewControllable>)object;
-            break;
-        }
+    if ([rootObject conformsToProtocol:@protocol(HEViewControllable)]) {
+        self.root = (id<HEViewControllable>)rootObject;
     }
-
-    UIViewController * viewController = root.viewController;
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
 }
 
 - (UIViewController*) viewController {
-    return self.navigationController;
+    return [[[UINavigationController alloc] initWithRootViewController:root.viewController] autorelease];
 }
 
 @end

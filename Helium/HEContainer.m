@@ -14,10 +14,11 @@
 @end
 
 @implementation HEContainer
-@synthesize view;
+@synthesize view, title;
 
 - (void) dealloc {
     [view release];
+    [title release];
     [super dealloc];
 }
 
@@ -32,6 +33,7 @@
     // Don't retain the view controller, either, because it retains this page
 
     HEViewController * viewController = [[HEViewController new] autorelease]; 
+    viewController.title = self.title;
     [viewController loadPage:self];
     return viewController;
 }

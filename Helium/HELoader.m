@@ -19,9 +19,22 @@
     return [self loadPageFromData:[self dataFromURL:url]];    
 }
 
++ (id<HEObject>) loadPage:(NSString*)fileOrUrl {
+    return [self loadPageFromData:[self data:fileOrUrl]];
+}
+
 + (id<HEObject>) loadPageFromData:(NSData *)data {
+    if (!data) return nil;
     id<HEViewControllable> page = (id<HEViewControllable>)[HEParser parseData:data];
     return page;
+}
+
++ (NSData*) data:(NSString*)fileOrUrl {
+    if ([fileOrUrl rangeOfString:@"http://"].location == NSNotFound) {
+        return [self dataFromFile:fileOrUrl];
+    }
+    
+    return [self dataFromURL:fileOrUrl];
 }
 
 + (NSData*) dataFromFile:(NSString*)file {

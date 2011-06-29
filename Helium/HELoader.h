@@ -13,8 +13,10 @@
 
 + (id<HEObject>) loadPageFromFile:(NSString*)file;
 + (id<HEObject>) loadPageFromURL:(NSString*)url;
++ (id<HEObject>) loadPage:(NSString*)fileOrUrl;
 + (id<HEObject>) loadPageFromData:(NSData*)data;
 
++ (NSData*) data:(NSString*)fileOrUrl;
 + (NSData*) dataFromFile:(NSString*)file;
 + (NSData*) dataFromURL:(NSString*)url;
 

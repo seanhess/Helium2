@@ -68,7 +68,7 @@
         
         NSLog(@"LOADING USING LOAD %@", load);
         // load the object remotely
-        NSData * data = [HELoader dataFromFile:load];
+        NSData * data = [HELoader data:load];
         TBXMLElement * sourceElement = [self elementForData:data];
         
         NSMutableDictionary * sourceAttributes = [self parseAttributes:sourceElement];

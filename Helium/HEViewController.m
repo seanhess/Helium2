@@ -60,7 +60,7 @@
     if ([note.object conformsToProtocol:@protocol(HEViewable)]) {
         if ([[(id<HEViewable>)note.object view] isDescendantOfView:self.view]) {
             NSString * url = [[note userInfo] objectForKey:@"url"];
-            id<HEViewable> newPage = (id<HEViewable>)[HELoader loadPageFromFile:url];
+            id<HEViewable> newPage = (id<HEViewable>)[HELoader loadPage:url];
             
             if (self.navigationController && [newPage conformsToProtocol:@protocol(HEViewControllable)])
                 [self.navigationController pushViewController:[(id<HEViewControllable>)newPage viewController] animated:YES];

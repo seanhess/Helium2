@@ -14,11 +14,12 @@
 @end
 
 @implementation HEContainer
-@synthesize view, title;
+@synthesize view, title, icon;
 
 - (void) dealloc {
     [view release];
     [title release];
+    [icon release];
     [super dealloc];
 }
 
@@ -35,6 +36,10 @@
     HEViewController * viewController = [[HEViewController new] autorelease]; 
     viewController.title = self.title;
     [viewController loadPage:self];
+    
+    if (self.icon)
+        viewController.tabBarItem.image = [UIImage imageNamed:self.icon];
+    
     return viewController;
 }
 

@@ -21,7 +21,7 @@
     // Ok, I need to let it parse, then have SOMETHING create me a thang
     // .viewController? Right? 
     
-    id<HEViewControllable> page = (id<HEViewControllable>)[HELoader loadPageFromFile:@"navigation.hml"];
+    id<HEViewControllable> page = (id<HEViewControllable>)[HELoader loadPageFromFile:@"tabs.hml"];
     UIViewController * viewController = page.viewController;
     
     // Override point for customization after application launch.

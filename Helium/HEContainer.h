@@ -11,4 +11,5 @@
 
 @interface HEContainer : HEView <HEViewControllable>
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * icon;
 @end

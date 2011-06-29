@@ -9,12 +9,10 @@
 #import "HENavigation.h"
 
 @interface HENavigation ()
-@property (nonatomic, assign) id<HEViewControllable> root;
 @end
 
 
 @implementation HENavigation
-@synthesize root;
 
 - (void) dealloc {
     [super dealloc];
@@ -22,15 +20,10 @@
 
 - (void) didInitialize {
 
-    id<HEObject> rootObject = [self.children objectAtIndex:0];
-    
-    if ([rootObject conformsToProtocol:@protocol(HEViewControllable)]) {
-        self.root = (id<HEViewControllable>)rootObject;
-    }
 }
 
 - (UIViewController*) viewController {
-    return [[[UINavigationController alloc] initWithRootViewController:root.viewController] autorelease];
+    return [[[UINavigationController alloc] initWithRootViewController:self.root.viewController] autorelease];
 }
 
 @end

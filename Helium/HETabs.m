@@ -6,18 +6,28 @@
 //  Copyright 2011 I.TV. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "HETabs.h"
 
 @implementation HETabs
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        // Initialization code here.
+- (void) dealloc {
+    [super dealloc];
+}
+
+- (UIViewController*) viewController {
+    UITabBarController * tabBarController = [[UITabBarController new] autorelease];
+    NSMutableArray * viewControllers = [NSMutableArray array];
+    
+    for (id<HEObject> object in self.children) {
+        if ([object conformsToProtocol:@protocol(HEViewControllable)]) {
+            [viewControllers addObject:[(id<HEViewControllable>)object viewController]];
+        }
     }
     
-    return self;
+    tabBarController.viewControllers = viewControllers;
+    
+    return tabBarController;
 }
 
 @end

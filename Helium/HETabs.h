@@ -6,8 +6,9 @@
 //  Copyright 2011 I.TV. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "HEBase.h"
+#import "HEViewController.h"
 
-@interface HETabs : NSObject
+@interface HETabs : HEBase <HEViewControllable>
 
 @end

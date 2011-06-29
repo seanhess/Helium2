@@ -20,6 +20,19 @@
     
 }
 
+- (id<HEViewControllable>)root {
+    
+    // returns the view controllable item
+    
+    for (id<HEObject> object in self.children) {
+        if ([object conformsToProtocol:@protocol(HEViewControllable)]) {
+            return (id<HEViewControllable>)object;
+        }
+    }
+    
+    return nil;
+}
+
 - (void) addChild:(id<HEObject>)child {
     [self.children addObject:child];
 }

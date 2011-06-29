@@ -1,0 +1,10 @@
+<Tabs>
+    <Container background="#AA0000" title="Red"/>
+    <Container background="#00AA00" title="Green"/>    
+    <Container background="#0000AA" title="Blue"/>        
+    <Navigation>
+        <Container background="#FFFFFF" title="Nav" icon="Star-Favorites.png">
+            <Button text="Go" click="containers.hml"/>
+        </Container>
+    </Navigation>
+</Tabs>

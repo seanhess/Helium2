@@ -7,9 +7,6 @@
 //
 
 #import "HEView.h"
-#import "HEViewControllable.h"
 
-@interface HEContainer : HEView <HEViewControllable>
-@property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSString * icon;
+@interface HEContainer : HEView
 @end

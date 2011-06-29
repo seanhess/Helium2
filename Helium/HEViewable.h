@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "HEObject.h"
+#import "HEViewControllable.h"
 
-@protocol HEViewable <HEObject>
+@protocol HEViewable <HEObject, HEViewControllable>
 - (UIView*)view;
 @end

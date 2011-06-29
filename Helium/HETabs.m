@@ -10,8 +10,11 @@
 #import "HETabs.h"
 
 @implementation HETabs
+@synthesize title, icon;
 
 - (void) dealloc {
+    [title release];
+    [icon release];
     [super dealloc];
 }
 
@@ -26,6 +29,8 @@
     }
     
     tabBarController.viewControllers = viewControllers;
+    
+    // ignore title and icon, because nesting tab bar controllers is stupid
     
     return tabBarController;
 }

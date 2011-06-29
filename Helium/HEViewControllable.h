@@ -10,5 +10,7 @@
 #import "HEObject.h"
 
 @protocol HEViewControllable <HEObject>
+@property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * icon;
 - (UIViewController*)viewController;
 @end

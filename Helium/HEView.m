@@ -9,8 +9,10 @@
 #import "HEView.h"
 #import "UIView+Layout.h"
 #import "UIColor+Hex.h"
+#import "HEViewController.h"
 
 @interface HEView ()
+@property (nonatomic, retain) UIGestureRecognizer * tap;
 @end
 
 @implementation HEView
@@ -18,6 +20,7 @@
 @synthesize click;
 @synthesize background;
 @synthesize tap;
+@synthesize title, icon;
 
 - (void) dealloc {
     
@@ -35,12 +38,33 @@
     [self.view removeGestureRecognizer:self.tap];     
     [tap release];
     
+    [title release];
+    [icon release];
+    
     [super dealloc];
 }
 
 - (UIView *)view {
     return nil;
 }
+
+- (UIViewController*) viewController {
+    
+    // Generate dynamically, because we don't always need it. 
+    // Don't retain the view controller, either, because it retains this page
+
+    HEViewController * viewController = [[HEViewController new] autorelease]; 
+    [viewController loadPage:self];
+    
+    if (self.title)
+        viewController.title = self.title;    
+    
+    if (self.icon)
+        viewController.tabBarItem.image = [UIImage imageNamed:self.icon];
+    
+    return viewController;
+}
+
 
 - (void) didInitialize {
 

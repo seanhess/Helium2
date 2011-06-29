@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HEViewable.h"
 
 @interface ExampleViewController : UIViewController
-
+@property (nonatomic, retain) id<HEViewable>page;
 @end

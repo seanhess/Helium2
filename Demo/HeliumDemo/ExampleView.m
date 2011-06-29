@@ -16,6 +16,11 @@
     if (self) {
         self.backgroundColor = [UIColor blueColor];
         self.frame = CGRectMake(0, 0, 100, 100);
+        UILabel * label = [[UILabel new] autorelease];
+        label.frame = CGRectMake(0, 0, 100, 100);
+        label.text = @"This is a Custom view";
+        label.backgroundColor = [UIColor clearColor];
+        [self addSubview:label];
     }
     return self;
 }

@@ -7,8 +7,12 @@
 //
 
 #import "ExampleViewController.h"
+#import "HELoader.h"
+#import "HEObject.h"
+#import "HEViewable.h"
 
 @implementation ExampleViewController
+@synthesize page;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +39,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    // demonstrate that you can jump back to helium. 
+    
+    self.page = (id<HEViewable>)[HELoader loadPageFromFile:@"containers.hml"];
+    self.page.view.frame = CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 100);
+    [self.view addSubview:self.page.view];
 }
 
 - (void)viewDidUnload
@@ -49,6 +59,11 @@
     // Return YES for supported orientations
 //    return (interfaceOrientation == UIInterfaceOrientationPortrait);
     return YES;
+}
+
+- (void) dealloc {
+    [page release];
+    [super dealloc];
 }
 
 @end

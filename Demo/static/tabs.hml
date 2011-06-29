@@ -4,12 +4,16 @@
         <ExampleView/>
     </Container>
 
-    <!-- Apparently you can nest tab bar controllers. Weird 
+    <!-- Apparently you can nest tab bar controllers. Weird -->
     <Tabs title="Nest">
-        <Container title="woot"/>
+        <Container title="woot">
+            <DemoExampleViewAdapter left="10" right="10" height="100"/>
+        </Container>
         <Container title="two"/>
+        <ExampleViewController />
+        <ExampleViewController nibName="ExampleViewController2"/>            
     </Tabs>
-    -->
+    
     
     <!-- Load a Custom UIViewController -->
     <!-- Can I be fancy and detect what it is? -->
@@ -31,14 +35,16 @@
         That's... really cool. I like the idea of a pass-through. Right? 
     -->
         
-    <ExampleViewController />
-    <ExampleViewController nibName="ExampleViewController2"/>    
     
     <Scroll load="scroll.hml" title="Scroll2" icon="Star-Favorites.png"/>
     
     <Navigation>
-        <Container background="#FFFFFF" title="Nav" icon="Star-Favorites.png">
+        <Container background="#FFFFFF" title="Nav" icon="Star-Favorites.png">      
             <Button text="Go" click="containers.hml" height="100" left="10" top="10" right="10"/>
         </Container>
+    </Navigation>
+    
+    <Navigation>
+        <ExampleViewController />      
     </Navigation>
 </Tabs>

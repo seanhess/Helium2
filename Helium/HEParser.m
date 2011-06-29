@@ -64,12 +64,12 @@
     NSArray * children = [self parseChildren:element];
     
     // Check Source
-    NSString * source = [attributes objectForKey:@"source"];
-    if (source && [source rangeOfString:@"http://"].location == NSNotFound) {
+    NSString * load = [attributes objectForKey:@"load"];
+    if (load) {
         
-        NSLog(@"LOADING USING SOURCE %@", source);
+        NSLog(@"LOADING USING LOAD %@", load);
         // load the object remotely
-        NSData * data = [HELoader dataFromFile:source];
+        NSData * data = [HELoader dataFromFile:load];
         TBXMLElement * sourceElement = [self elementForData:data];
         
         NSMutableDictionary * sourceAttributes = [self parseAttributes:sourceElement];
@@ -83,9 +83,6 @@
         attributes = sourceAttributes;
         children = sourceChildren;
     }
-    
-    
-    
     
     [self object:object setAttributes:attributes];
     [self object:object setChildren:children];    

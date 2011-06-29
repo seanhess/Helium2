@@ -3,7 +3,7 @@
         <Container background="#FFFFFF" left="20" right="20" top="20" bottom="20"/>
     </Container>
 
-    <Container source="woot.hml" title="Woot"/>
+    <Container load="woot.hml" title="Woot"/>
     
     <!-- Apparently you can nest tab bar controllers. Weird -->
     <Tabs title="Nest">
@@ -11,7 +11,7 @@
         <Container title="two"/>
     </Tabs>
     
-    <Scroll source="scroll.hml"/>
+    <Scroll load="scroll.hml"/>
     
     <Navigation>
         <Container background="#FFFFFF" title="Nav" icon="Star-Favorites.png">

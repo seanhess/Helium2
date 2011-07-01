@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		781BEB0A13BE1386002F9389 /* HEShakeWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 781BEB0813BE1386002F9389 /* HEShakeWindow.h */; };
 		781BEB0B13BE1386002F9389 /* HEShakeWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 781BEB0913BE1386002F9389 /* HEShakeWindow.m */; };
+		781BEB1813BE2062002F9389 /* HETable.h in Headers */ = {isa = PBXBuildFile; fileRef = 781BEB1613BE2062002F9389 /* HETable.h */; };
+		781BEB1913BE2062002F9389 /* HETable.m in Sources */ = {isa = PBXBuildFile; fileRef = 781BEB1713BE2062002F9389 /* HETable.m */; };
+		781BEB1C13BE2123002F9389 /* HECell.h in Headers */ = {isa = PBXBuildFile; fileRef = 781BEB1A13BE2123002F9389 /* HECell.h */; };
+		781BEB1D13BE2123002F9389 /* HECell.m in Sources */ = {isa = PBXBuildFile; fileRef = 781BEB1B13BE2123002F9389 /* HECell.m */; };
 		7837177613B3E29300C0600C /* HENavigation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7837177413B3E29000C0600C /* HENavigation.h */; };
 		7837177713B3E29300C0600C /* HENavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7837177513B3E29200C0600C /* HENavigation.m */; };
 		7837177B13B3E39F00C0600C /* HETabs.h in Headers */ = {isa = PBXBuildFile; fileRef = 7837177913B3E39D00C0600C /* HETabs.h */; };
@@ -79,6 +83,10 @@
 /* Begin PBXFileReference section */
 		781BEB0813BE1386002F9389 /* HEShakeWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEShakeWindow.h; sourceTree = "<group>"; };
 		781BEB0913BE1386002F9389 /* HEShakeWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEShakeWindow.m; sourceTree = "<group>"; };
+		781BEB1613BE2062002F9389 /* HETable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HETable.h; sourceTree = "<group>"; };
+		781BEB1713BE2062002F9389 /* HETable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HETable.m; sourceTree = "<group>"; };
+		781BEB1A13BE2123002F9389 /* HECell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HECell.h; sourceTree = "<group>"; };
+		781BEB1B13BE2123002F9389 /* HECell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HECell.m; sourceTree = "<group>"; };
 		7837177413B3E29000C0600C /* HENavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HENavigation.h; sourceTree = "<group>"; };
 		7837177513B3E29200C0600C /* HENavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HENavigation.m; sourceTree = "<group>"; };
 		7837177913B3E39D00C0600C /* HETabs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HETabs.h; sourceTree = "<group>"; };
@@ -258,6 +266,10 @@
 				785E641013BB96BA00FB3C03 /* HEScroll.m */,
 				781BEB0813BE1386002F9389 /* HEShakeWindow.h */,
 				781BEB0913BE1386002F9389 /* HEShakeWindow.m */,
+				781BEB1613BE2062002F9389 /* HETable.h */,
+				781BEB1713BE2062002F9389 /* HETable.m */,
+				781BEB1A13BE2123002F9389 /* HECell.h */,
+				781BEB1B13BE2123002F9389 /* HECell.m */,
 			);
 			path = Helium;
 			sourceTree = "<group>";
@@ -324,6 +336,8 @@
 				785E641113BB96BA00FB3C03 /* HEScroll.h in Headers */,
 				785E642113BBCE8300FB3C03 /* HEAdapter.h in Headers */,
 				781BEB0A13BE1386002F9389 /* HEShakeWindow.h in Headers */,
+				781BEB1813BE2062002F9389 /* HETable.h in Headers */,
+				781BEB1C13BE2123002F9389 /* HECell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +458,8 @@
 				785E641213BB96BA00FB3C03 /* HEScroll.m in Sources */,
 				785E642213BBCE8300FB3C03 /* HEAdapter.m in Sources */,
 				781BEB0B13BE1386002F9389 /* HEShakeWindow.m in Sources */,
+				781BEB1913BE2062002F9389 /* HETable.m in Sources */,
+				781BEB1D13BE2123002F9389 /* HECell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

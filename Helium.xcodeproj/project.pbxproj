@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		781BEB0A13BE1386002F9389 /* HEShakeWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 781BEB0813BE1386002F9389 /* HEShakeWindow.h */; };
+		781BEB0B13BE1386002F9389 /* HEShakeWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 781BEB0913BE1386002F9389 /* HEShakeWindow.m */; };
 		7837177613B3E29300C0600C /* HENavigation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7837177413B3E29000C0600C /* HENavigation.h */; };
 		7837177713B3E29300C0600C /* HENavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7837177513B3E29200C0600C /* HENavigation.m */; };
 		7837177B13B3E39F00C0600C /* HETabs.h in Headers */ = {isa = PBXBuildFile; fileRef = 7837177913B3E39D00C0600C /* HETabs.h */; };
@@ -75,6 +77,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		781BEB0813BE1386002F9389 /* HEShakeWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEShakeWindow.h; sourceTree = "<group>"; };
+		781BEB0913BE1386002F9389 /* HEShakeWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEShakeWindow.m; sourceTree = "<group>"; };
 		7837177413B3E29000C0600C /* HENavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HENavigation.h; sourceTree = "<group>"; };
 		7837177513B3E29200C0600C /* HENavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HENavigation.m; sourceTree = "<group>"; };
 		7837177913B3E39D00C0600C /* HETabs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HETabs.h; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 				7837178713B400EF00C0600C /* HEActionLink.m */,
 				785E640F13BB96BA00FB3C03 /* HEScroll.h */,
 				785E641013BB96BA00FB3C03 /* HEScroll.m */,
+				781BEB0813BE1386002F9389 /* HEShakeWindow.h */,
+				781BEB0913BE1386002F9389 /* HEShakeWindow.m */,
 			);
 			path = Helium;
 			sourceTree = "<group>";
@@ -317,6 +323,7 @@
 				7837178813B400F100C0600C /* HEActionLink.h in Headers */,
 				785E641113BB96BA00FB3C03 /* HEScroll.h in Headers */,
 				785E642113BBCE8300FB3C03 /* HEAdapter.h in Headers */,
+				781BEB0A13BE1386002F9389 /* HEShakeWindow.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +443,7 @@
 				7837178913B400F100C0600C /* HEActionLink.m in Sources */,
 				785E641213BB96BA00FB3C03 /* HEScroll.m in Sources */,
 				785E642213BBCE8300FB3C03 /* HEAdapter.m in Sources */,
+				781BEB0B13BE1386002F9389 /* HEShakeWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

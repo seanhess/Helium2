@@ -17,10 +17,14 @@
 
 @implementation HELabel
 @synthesize label, text;
+@synthesize color, size, font, align;
 
 - (void) dealloc {
     [label release];
     [text release];
+    [color release];
+    [size release];
+    [font release];
     [super dealloc];
 }
 
@@ -30,6 +34,27 @@
 
 - (void) didInitialize {
     self.label = [UILabel new];
+    
+    NSString * fontName = (self.font) ? self.font : @"Arial";
+    CGFloat fontSize = (self.size) ? [self.size floatValue] : 17;    
+        
+    self.label.font = [UIFont fontWithName:fontName size:fontSize];
+    
+    // Alignment
+    if ([self.align isEqualToString:@"right"]) 
+        self.label.textAlignment = UITextAlignmentRight;
+        
+    else if ([self.align isEqualToString:@"center"])
+        self.label.textAlignment = UITextAlignmentCenter;
+        
+    // Check default background
+    if (!self.background)
+        self.label.backgroundColor = [UIColor clearColor];
+            
+    // Color
+    if (self.color)
+        self.label.textColor = [UIColor colorWithCSS:self.color];
+    
     self.label.text = text;
     [super didInitialize];
 }

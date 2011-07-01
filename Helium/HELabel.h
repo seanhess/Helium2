@@ -11,4 +11,8 @@
 
 @interface HELabel : HEView
 @property (nonatomic, retain) NSString * text;
+@property (nonatomic, retain) NSString * color;
+@property (nonatomic, retain) NSNumber * size;
+@property (nonatomic, retain) NSString * font;
+@property (nonatomic, retain) NSString * align;
 @end

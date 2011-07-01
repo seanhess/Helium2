@@ -25,7 +25,7 @@
     // .viewController? Right? 
     
     //id<HEViewControllable> page = (id<HEViewControllable>)[HELoader loadPage:@"/main.hml"];    
-    id<HEViewControllable> page = (id<HEViewControllable>)[HELoader loadPage:@"bundle://tabs.hml"];        
+    id<HEViewControllable> page = (id<HEViewControllable>)[HELoader loadPage:@"bundle://topheightbug.hml"];        
     UIViewController * viewController = page.viewController;
     
     // Override point for customization after application launch.

@@ -27,6 +27,7 @@
 		78D8F0D713A0640D003750D2 /* HeliumDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D8F0D613A0640D003750D2 /* HeliumDemoAppDelegate.m */; };
 		78E9898613A064BA005A72D4 /* libHelium.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E9898113A064A5005A72D4 /* libHelium.a */; };
 		78E989AE13A0676E005A72D4 /* containers.hml in Resources */ = {isa = PBXBuildFile; fileRef = 78E989AD13A0676E005A72D4 /* containers.hml */; };
+		78EA2EDE13BE68D6005CAFB3 /* topheightbug.hml in Resources */ = {isa = PBXBuildFile; fileRef = 78EA2EDD13BE68D6005CAFB3 /* topheightbug.hml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		78D8F0D613A0640D003750D2 /* HeliumDemoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeliumDemoAppDelegate.m; sourceTree = "<group>"; };
 		78E9897813A064A4005A72D4 /* Helium.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Helium.xcodeproj; path = ../Helium.xcodeproj; sourceTree = "<group>"; };
 		78E989AD13A0676E005A72D4 /* containers.hml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = containers.hml; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
+		78EA2EDD13BE68D6005CAFB3 /* topheightbug.hml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = topheightbug.hml; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				785E640D13BB918900FB3C03 /* Star-Favorites.png */,
 				78C11FBF13AD2A5600546CDF /* henry.hml */,
 				78E989AD13A0676E005A72D4 /* containers.hml */,
+				78EA2EDD13BE68D6005CAFB3 /* topheightbug.hml */,
 				78BBDCC613A9A05C0038C805 /* woot.hml */,
 				785E641813BBC45600FB3C03 /* scroll.hml */,
 				785E640913BB8A1C00FB3C03 /* navigation.hml */,
@@ -267,6 +270,7 @@
 				785E641913BBC45600FB3C03 /* scroll.hml in Resources */,
 				785E641E13BBC81E00FB3C03 /* ExampleViewController.xib in Resources */,
 				785E642713BBD40E00FB3C03 /* ExampleViewController2.xib in Resources */,
+				78EA2EDE13BE68D6005CAFB3 /* topheightbug.hml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,8 @@
+<Container background="888000">
+    <Container background="#999999" width="258" top="2" bottom="2" left="2">
+        <Container height="60" top="30" background="#999999">
+        </Container>
+        <Container background="#333333" top="92"/>
+    </Container>
+</Container>
+

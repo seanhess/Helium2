@@ -29,7 +29,16 @@
 - (void) didInitialize {
 
     self.imageView = [UIImageView new];
-    self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.source]]];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.source]];
+        UIImage * image = [UIImage imageWithData:data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.imageView.image = image;
+        });
+    });
+    
+    
     
     [super didInitialize];
     

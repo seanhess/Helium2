@@ -77,7 +77,7 @@
     }
     
     // You have to set the autoresizing mask to get the frame to fire when the superview's frame changes
-    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth;    
+    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;    
     [self.view addObserver:self forKeyPath:@"frame" options:0 context:nil]; 
     
     // Add children
@@ -102,7 +102,7 @@
     if (keyPath == @"frame") {
         [self.view removeObserver:self forKeyPath:@"frame"];    
 
-        if (self.view.superview)
+        //if (self.view.superview)
             [self layout];
     }
 }

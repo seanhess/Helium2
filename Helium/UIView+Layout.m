@@ -24,12 +24,16 @@
 
 - (void)calculateLayoutWithLeft:(NSNumber*)left top:(NSNumber*)top right:(NSNumber*)right bottom:(NSNumber*)bottom width:(NSNumber*)width height:(NSNumber*)height nativeWidth:(NSNumber*)nativeWidth nativeHeight:(NSNumber*)nativeHeight {
     
-    NSAssert(self.superview, @"Missing superview when calculating size!");
+    //NSAssert(self.superview, @"Missing superview when calculating size!");
     
 
     UIViewAutoresizing mask = UIViewAutoresizingNone;
-
     
+    CGFloat fullWidth = self.frame.size.width;
+    CGFloat fullHeight = self.frame.size.height;
+
+    CGFloat startX = self.frame.origin.x;
+    CGFloat startY = self.frame.origin.y;
     
     
     // -width: calculate width based on left and right
@@ -57,7 +61,7 @@
         w = nativeWidth.intValue;    
     
     else {
-        w = self.superview.bounds.size.width - left.intValue - right.intValue;
+        w = fullWidth - left.intValue - right.intValue;
         mask = mask | UIViewAutoresizingFlexibleWidth;    
     }
         
@@ -70,7 +74,7 @@
         h = nativeHeight.intValue;        
 
     else {
-        h = self.superview.bounds.size.height - top.intValue - bottom.intValue;
+        h = fullHeight - top.intValue - bottom.intValue;
         mask = mask | UIViewAutoresizingFlexibleHeight;          
     }
 
@@ -78,9 +82,13 @@
 
 
     // X
+    
+    if (startX) {
+        x = startX;
+    }
 
-    if (shouldPegRight) {
-        x = self.superview.bounds.size.width - right.intValue - w;
+    else if (shouldPegRight) {
+        x = fullWidth - right.intValue - w;
         mask = mask | UIViewAutoresizingFlexibleLeftMargin;                         
     }
         
@@ -90,9 +98,13 @@
         
         
     // Y
+    
+    if (startY) {
+        y = startY;
+    }
         
-    if (shouldPegBottom) {
-        y = self.superview.bounds.size.height - bottom.intValue - h;
+    else if (shouldPegBottom) {
+        y = fullHeight - bottom.intValue - h;
         mask = mask | UIViewAutoresizingFlexibleTopMargin;                    
     }
     

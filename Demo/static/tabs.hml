@@ -36,7 +36,7 @@
     -->
         
     
-    <Scroll load="bundle://scroll.hml" title="Scroll2" icon="Star-Favorites.png"/>
+    <Navigation load="bundle://scroll.hml" title="Scroll2" icon="Star-Favorites.png"/>
     
     <Navigation>
         <Container background="#FFFFFF" title="Nav" icon="Star-Favorites.png">      

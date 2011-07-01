@@ -11,6 +11,7 @@
 #import "HEViewControllable.h"
 #import "HEParser.h"
 #import "HELoader.h"
+#import "HEShakeWindow.h"
 
 @implementation HeliumDemoAppDelegate
 
@@ -28,7 +29,7 @@
     UIViewController * viewController = page.viewController;
     
     // Override point for customization after application launch.
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = [[HEShakeWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window addSubview:viewController.view];
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];

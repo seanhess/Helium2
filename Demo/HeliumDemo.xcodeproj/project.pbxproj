@@ -17,6 +17,7 @@
 		785E642713BBD40E00FB3C03 /* ExampleViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785E642613BBD40E00FB3C03 /* ExampleViewController2.xib */; };
 		785E642A13BBD70200FB3C03 /* DemoExampleViewAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E642913BBD70200FB3C03 /* DemoExampleViewAdapter.m */; };
 		7871840B13A86D4600F30570 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7871840A13A86D4600F30570 /* libz.dylib */; };
+		78896D4D13C3997400D3639E /* main.hml in Resources */ = {isa = PBXBuildFile; fileRef = 78896D4C13C3997400D3639E /* main.hml */; };
 		78BBDCC713A9A05C0038C805 /* woot.hml in Resources */ = {isa = PBXBuildFile; fileRef = 78BBDCC613A9A05C0038C805 /* woot.hml */; };
 		78C11FC013AD2A5600546CDF /* henry.hml in Resources */ = {isa = PBXBuildFile; fileRef = 78C11FBF13AD2A5600546CDF /* henry.hml */; };
 		78D8F0C713A0640D003750D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D8F0C613A0640D003750D2 /* UIKit.framework */; };
@@ -25,6 +26,7 @@
 		78D8F0D113A0640D003750D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78D8F0CF13A0640D003750D2 /* InfoPlist.strings */; };
 		78D8F0D313A0640D003750D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D8F0D213A0640D003750D2 /* main.m */; };
 		78D8F0D713A0640D003750D2 /* HeliumDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D8F0D613A0640D003750D2 /* HeliumDemoAppDelegate.m */; };
+		78E7028B13C387AE0087196B /* imagebug.hml in Resources */ = {isa = PBXBuildFile; fileRef = 78E7028A13C387AE0087196B /* imagebug.hml */; };
 		78E9898613A064BA005A72D4 /* libHelium.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E9898113A064A5005A72D4 /* libHelium.a */; };
 		78E989AE13A0676E005A72D4 /* containers.hml in Resources */ = {isa = PBXBuildFile; fileRef = 78E989AD13A0676E005A72D4 /* containers.hml */; };
 		78EA2EDE13BE68D6005CAFB3 /* topheightbug.hml in Resources */ = {isa = PBXBuildFile; fileRef = 78EA2EDD13BE68D6005CAFB3 /* topheightbug.hml */; };
@@ -69,6 +71,7 @@
 		785E642913BBD70200FB3C03 /* DemoExampleViewAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoExampleViewAdapter.m; sourceTree = "<group>"; };
 		785E642B13BBD99800FB3C03 /* server */ = {isa = PBXFileReference; lastKnownFileType = folder; path = server; sourceTree = "<group>"; };
 		7871840A13A86D4600F30570 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		78896D4C13C3997400D3639E /* main.hml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.hml; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		78BBDCC613A9A05C0038C805 /* woot.hml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = woot.hml; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		78C11FBF13AD2A5600546CDF /* henry.hml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = henry.hml; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		78D8F0C213A0640D003750D2 /* HeliumDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeliumDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +84,7 @@
 		78D8F0D413A0640D003750D2 /* HeliumDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HeliumDemo-Prefix.pch"; sourceTree = "<group>"; };
 		78D8F0D513A0640D003750D2 /* HeliumDemoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeliumDemoAppDelegate.h; sourceTree = "<group>"; };
 		78D8F0D613A0640D003750D2 /* HeliumDemoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeliumDemoAppDelegate.m; sourceTree = "<group>"; };
+		78E7028A13C387AE0087196B /* imagebug.hml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = imagebug.hml; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		78E9897813A064A4005A72D4 /* Helium.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Helium.xcodeproj; path = ../Helium.xcodeproj; sourceTree = "<group>"; };
 		78E989AD13A0676E005A72D4 /* containers.hml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = containers.hml; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		78EA2EDD13BE68D6005CAFB3 /* topheightbug.hml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = topheightbug.hml; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
@@ -182,6 +186,8 @@
 				785E641813BBC45600FB3C03 /* scroll.hml */,
 				785E640913BB8A1C00FB3C03 /* navigation.hml */,
 				785E640B13BB8F6300FB3C03 /* tabs.hml */,
+				78E7028A13C387AE0087196B /* imagebug.hml */,
+				78896D4C13C3997400D3639E /* main.hml */,
 			);
 			path = static;
 			sourceTree = SOURCE_ROOT;
@@ -271,6 +277,8 @@
 				785E641E13BBC81E00FB3C03 /* ExampleViewController.xib in Resources */,
 				785E642713BBD40E00FB3C03 /* ExampleViewController2.xib in Resources */,
 				78EA2EDE13BE68D6005CAFB3 /* topheightbug.hml in Resources */,
+				78E7028B13C387AE0087196B /* imagebug.hml in Resources */,
+				78896D4D13C3997400D3639E /* main.hml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

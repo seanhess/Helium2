@@ -1,0 +1,8 @@
+<Container background="#FFFFFF">
+    <Image source="bundle://Star-Favorites.png"/>
+    <Image source="bundle://Star-Favorites.png" right="0"/>    
+    <Image source="bundle://Star-Favorites.png" right="0" bottom="0"/>        
+    <Image source="bundle://Star-Favorites.png" bottom="0"/> 
+    <Image source="bundle://Star-Favorites.png" left="0" right="0" top="100"/> 
+    <Image source="bundle://Star-Favorites.png" width="200" top="200"/>     
+</Container>

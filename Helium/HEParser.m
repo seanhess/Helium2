@@ -66,7 +66,6 @@
     NSString * load = [attributes objectForKey:@"load"];
     if (load) {
         
-        NSLog(@"LOADING USING LOAD %@", load);
         // load the object remotely
         NSData * data = [HELoader data:load];
         TBXMLElement * sourceElement = [self elementForData:data];

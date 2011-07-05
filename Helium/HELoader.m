@@ -52,6 +52,7 @@ static NSString * baseUrl = nil;
 }
 
 + (NSData*) dataFromFile:(NSString*)file {
+    NSLog(@"FILE %@", file);
     NSString * extension = [file pathExtension];
     NSString * basename = [file stringByDeletingPathExtension];
     NSString * path = [[NSBundle mainBundle] pathForResource:basename ofType:extension];
@@ -64,6 +65,8 @@ static NSString * baseUrl = nil;
     if (baseUrl) {
         url = [baseUrl stringByAppendingString:url];
     }
+    
+    NSLog(@"URL2 %@", url);
 
     // I need to support relative urls, but for now, global
     NSURL * nativeUrl = [NSURL URLWithString:url];

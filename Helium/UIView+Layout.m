@@ -13,16 +13,24 @@
 
 - (void) calculateFrameWithLayout:(id<HELayoutable>)layout {
 
-    [self calculateLayoutWithLeft:layout.left top:layout.top right:layout.right bottom:layout.bottom width:layout.width height:layout.height nativeWidth:nil nativeHeight:nil];    
+    [self calculateLayoutWithLeft:layout.left top:layout.top right:layout.right bottom:layout.bottom width:layout.width height:layout.height];    
 }
 
-- (void) calculateLayoutWithLeft:(NSNumber *)left top:(NSNumber *)top right:(NSNumber *)right bottom:(NSNumber *)bottom width:(NSNumber *)width height:(NSNumber *)height {
+- (void) calculateLayoutWithLeft:(NSNumber *)left top:(NSNumber *)top right:(NSNumber *)right bottom:(NSNumber *)bottom width:(NSNumber *)width height:(NSNumber *)height nativeWidth:(NSNumber *)nativeWidth nativeHeight:(NSNumber *)nativeHeight {
 
-    [self calculateLayoutWithLeft:left top:top right:right bottom:bottom width:width height:height nativeWidth:nil nativeHeight:nil];
+
+    // When do we use nativeWidth and nativeHeight
+    // NOT if width || left & right
+    // OTHERWISE yes
+    
+    width = (width || (left && right)) ? width : nativeWidth;
+    height = (height || (top && bottom)) ? height : nativeHeight;
+
+    [self calculateLayoutWithLeft:left top:top right:right bottom:bottom width:width height:height];
 }
 
 
-- (void)calculateLayoutWithLeft:(NSNumber*)left top:(NSNumber*)top right:(NSNumber*)right bottom:(NSNumber*)bottom width:(NSNumber*)width height:(NSNumber*)height nativeWidth:(NSNumber*)nativeWidth nativeHeight:(NSNumber*)nativeHeight {
+- (void)calculateLayoutWithLeft:(NSNumber*)left top:(NSNumber*)top right:(NSNumber*)right bottom:(NSNumber*)bottom width:(NSNumber*)width height:(NSNumber*)height {
     
     //NSAssert(self.superview, @"Missing superview when calculating size!");
     
@@ -45,9 +53,6 @@
     // -top: calculate based on bottom and height
     // -bottom: ignore (0)
     
-    BOOL shouldStretchHeight = (top && bottom); // if top and bottom are set, must stretch
-    BOOL shouldStretchWidth = (right && left);
-    
     BOOL shouldPegBottom = (bottom && !top);
     BOOL shouldPegRight = (right && !left);
     
@@ -56,10 +61,7 @@
     // WIDTH 
     if (width)
         w = width.intValue;
-        
-    else if (nativeWidth && !shouldStretchWidth)
-        w = nativeWidth.intValue;    
-    
+
     else {
         w = fullWidth - left.intValue - right.intValue;
         mask = mask | UIViewAutoresizingFlexibleWidth;    
@@ -69,9 +71,6 @@
     // HEIGHT
     if (height)
         h = height.intValue;
-
-    else if (nativeHeight && !shouldStretchHeight)
-        h = nativeHeight.intValue;        
 
     else {
         h = fullHeight - top.intValue - bottom.intValue;

@@ -62,7 +62,7 @@ static NSString * baseUrl = nil;
 
 + (NSData*) dataFromURL:(NSString*)url {
 
-    if (baseUrl) {
+    if (baseUrl && [url rangeOfString:@"http://"].location == NSNotFound) {
         url = [baseUrl stringByAppendingString:url];
     }
     

@@ -386,6 +386,7 @@
 		78D8F08113A063E6003750D2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = I.TV;
 			};
 			buildConfigurationList = 78D8F08413A063E6003750D2 /* Build configuration list for PBXProject "Helium" */;
